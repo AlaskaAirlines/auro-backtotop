@@ -7,7 +7,7 @@
     "  3. Go to http://localhost:8000",
     "================================================================================"
   ],
-  "name": "@alaskaairux/auro-backtotop",
+  "name": "@aurolabs/auro-backtotop",
   "version": "0.0.0",
   "description": "Auro custom auro-backtotop element",
   "author": "Product design and research",
