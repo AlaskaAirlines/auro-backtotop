@@ -7,6 +7,18 @@
 
 $buttonDim: 40px;
 
+:host(.focus-visible) {
+  .trigger {
+    &--inline {
+      color: var(--auro-color-ui-hover-on-light);
+    }
+    &:not(.trigger--inline) {
+      background-color: var(--auro-color-brand-neutral-200);
+    }
+  }
+}
+
+
 .reference {
   width: 0;
   height: 0;
@@ -14,18 +26,22 @@ $buttonDim: 40px;
 
 .trigger {
   position: fixed;
-  bottom: -$buttonDim;
   right: 24px;
-  min-width: $buttonDim;
-  height: $buttonDim;
-  border: none;
-  border-radius: ($buttonDim / 2);
+  bottom: -$buttonDim;
+  transition: bottom 0.3ms ease-in-out;
+
   display: inline-flex;
   align-items: center;
-  cursor: pointer;
-  color: var(--auro-color-text-link-on-light);
-  transition: bottom 300ms ease-in-out;
 
+  min-width: $buttonDim;
+  height: $buttonDim;
+
+  border: none;
+  border-radius: ($buttonDim / 2);
+  box-sizing: border-box;
+  color: var(--auro-color-ui-default-on-light);
+  cursor: pointer;
+  
   &--inline {
     position: static;
     background-color: transparent;
@@ -39,20 +55,32 @@ $buttonDim: 40px;
     background-color: var(--auro-color-brand-neutral-100);
     border: 1px solid;
     border-color: var(--auro-color-brand-neutral-300);
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0.1) 0px 6px 12px -1px,
-    rgba(0, 0, 0, 0.05) 0px 8px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
 
     .message {
       max-width: 0;
       overflow: hidden;
       white-space: nowrap;
-      transition: max-width 300ms ease-in-out 50ms;
+      transition: all 0.25s ease-in-out 0.05s;
+    }
+  }
+
+  @media (hover: hover) {
+    &--inline:active,
+    &--inline:hover {
+      color: var(--auro-color-ui-hover-on-light);
     }
 
-    &:hover .message {
-      max-width: 32ch;
+    &:active,
+    &:hover {  
+      &:not(.trigger--inline) {
+        background-color: var(--auro-color-brand-neutral-200);
+
+        .message {
+          max-width: 32ch;
+          padding-left: 8px;
+        }
+      }
     }
   }
 }
