@@ -107,6 +107,7 @@ class AuroBacktotop extends LitElement {
       'trigger': true,
       'trigger--visible': this.visible,
       'trigger--inline': this.inline,
+      'trigger--fixed': !this.inline,
     };
 
     return html`
