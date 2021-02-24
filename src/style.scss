@@ -30,12 +30,14 @@ $buttonDim: 40px;
     bottom: (-$buttonDim - 4px);
     height: $buttonDim;
     min-width: $buttonDim;
+    background-color: var(--auro-color-background-lightest);
     background-color: var(--auro-color-brand-neutral-100);
     border: 1px solid;
     border-color: var(--auro-color-brand-neutral-300);
     border-radius: ($buttonDim / 2);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
     box-sizing: border-box;
+    z-index: 99999;
     transition: bottom 0.3s ease;
 
     .message {
@@ -58,6 +60,7 @@ $buttonDim: 40px;
 
     &--fixed:active,
     &--fixed:hover {
+      background-color: var(--auro-color-background-lighter);
       background-color: var(--auro-color-brand-neutral-200);
 
       .message {
@@ -74,6 +77,7 @@ $buttonDim: 40px;
         color: var(--auro-color-ui-hover-on-light);
       }
       &--fixed {
+        background-color: var(--auro-color-background-lighter);
         background-color: var(--auro-color-brand-neutral-200);
 
         .message {
