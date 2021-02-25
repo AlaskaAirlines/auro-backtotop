@@ -21,7 +21,19 @@
         .then((response) => response.text())
         .then((text) => {
           const rawHtml = marked(text);
-          document.querySelector('main').innerHTML = rawHtml;
+          const parsedDoc = (new DOMParser()).parseFromString(rawHtml, 'text/html');
+          const main = document.querySelector('main');
+          for (let node of parsedDoc.body.childNodes) {
+            // create and append inline <script> nodes so they execute
+            if (/script/i.test(node.tagName)) {
+              const script = document.createElement('script');
+              script.appendChild(document.createTextNode(node.textContent));
+              document.body.appendChild(script);
+            }
+            else {
+              main.appendChild(node);
+            }
+          }
           Prism.highlightAll();
         });
     </script>

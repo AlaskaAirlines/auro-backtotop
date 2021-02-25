@@ -4,24 +4,29 @@ A component to help users quickly return to the top of a page.
 
 ## Fixed position trigger
 
-By default, the `auro-backtotop` element is fixed to the bottom-right corner of the screen. The floating button becomes visible as the user scrolls down the page. Developers can tune when the button appears based on where the `auro-backtotop` element is placed in the document and with the `rootmargintop` property.
+By default, the `auro-backtotop` element is fixed to the bottom-right corner of the screen. The floating button becomes visible as the user scrolls down the page. Developers can tune when the button appears based on where the `auro-backtotop` element is placed in the document and with the `offset` property. To show the button sooner, use a smaller value (example: `50vh`) and to delay for longer content, use a higher value (example: `200vh` or `400vh`). Keep in mind that setting an `offset` value greater than the content height will increase the overall height of the container.
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <article>
+  <body>
+    <article>
+      <auro-backtotop></auro-backtotop>
+      <h3>Beowulf</h3>
+      <p> ... </p>
+      <p> ... </p>
+    </article>
+    .
+    .
+    .
     <auro-backtotop></auro-backtotop>
-    <h3>Beowulf</h3>
-    <p> ... </p>
-    <p> ... </p>
-  </article>
+  </body>
   ```
 
 </auro-accordion>
 
 <article>
-  <auro-backtotop></auro-backtotop>
   <h3>Beowulf</h3>
   <p>Hwæt. We Gardena in geardagum,</p>
   <p>þeodcyninga, þrym gefrunon,</p>
@@ -59,20 +64,20 @@ To render the trigger always-visible and inline, use the `inline` property.
 
   ```html
   <article>
-  <h3>The Canterbury Tales</h3>
-  <section>
-    <h4>The Knight's Tale</h4>
-    <p> ... </p>
-    <p> ... </p>
-    <auro-backtotop inline></auro-backtotop>
-  </section>
-  <section>
-    <h4>The Miller's Tale</h4>
-    <p> ... </p>
-    <p> ... </p>
-    <auro-backtotop inline></auro-backtotop>
-  </section>
-</article>
+    <h3>The Canterbury Tales</h3>
+    <section>
+      <h4>The Knight's Tale</h4>
+      <p> ... </p>
+      <p> ... </p>
+      <auro-backtotop inline></auro-backtotop>
+    </section>
+    <section>
+      <h4>The Miller's Tale</h4>
+      <p> ... </p>
+      <p> ... </p>
+      <auro-backtotop inline></auro-backtotop>
+    </section>
+  </article>
   ```
 
 </auro-accordion>
@@ -144,3 +149,7 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <p>Tip me over and pour me out!</p>
   <auro-backtotop inline>hop to top! 🫖</auro-backtotop>
 </article>
+
+<script>
+  document.body.append(document.createElement('auro-backtotop'));
+</script>
