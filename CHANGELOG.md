@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v1.0.0...v1.0.1) (2021-02-25)
+
+
+### Bug Fixes
+
+* use SCSS variables for new colors and limit message transitions ([feae094](https://github.com/AlaskaAirlines/auro-backtotop/commit/feae094a639c5a956edf4890e49fd3da033dff55))
+
 # 1.0.0 (2021-02-24)
 
 
