@@ -5,6 +5,7 @@
 // ---------------------------------------------------------------------
 import { LitElement, html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
+import { styleMap } from 'lit-html/directives/style-map';
 import arrowUp from "@alaskaairux/icons/dist/icons/interface/arrow-up_es6";
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
@@ -22,7 +23,7 @@ const
  *
  * @attr {String}   arialabel - Customize `title` element of the default icon, viewed on tooltip and read by screenreaders
  * @attr {Boolean}  inline - Render the trigger inline, will always be visible
- * @attr {String}   rootmargintop - Adjust root margin CSS pixel value. A negative value will show the trigger early and a positive value will delay showing the trigger. To learn more, see [`IntersectionObserver.rootMargin` docs](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin).
+ * @attr {String}   offset - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
  * @attr {Boolean}  visible - Indicates trigger visibility
  *
  * @slot - Customize trigger content
@@ -37,7 +38,7 @@ class AuroBacktotop extends LitElement {
       inline: {
         type: Boolean,
       },
-      rootmargintop: {
+      offset: {
         type: String,
       },
       visible: {
@@ -61,6 +62,7 @@ class AuroBacktotop extends LitElement {
     this._arialabel = DEFAULT_MESSAGE;
 
     this.inline = false;
+    this.offset = '100vh';
     this.visible = false;
 
     const dom = new DOMParser().parseFromString(arrowUp.svg, 'text/html'),
@@ -88,7 +90,7 @@ class AuroBacktotop extends LitElement {
       return
     }
     const observer = new IntersectionObserver((entries) => {
-      this.visible = entries.some((entry) => entry.intersectionRatio < VISIBLE_INTERSECTION_RATIO);
+      this.visible = entries.some((entry) => entry.intersectionRatio === HIDDEN_INTERSECTION_RATIO);
     }, {
       root: null,
       rootMargin: `${this.rootmargintop || DEFAULT_ROOT_MARGIN_TOP} 0px 0px 0px`,
@@ -103,16 +105,23 @@ class AuroBacktotop extends LitElement {
 
   render() {
 
-    const classes = {
-      'trigger': true,
-      'trigger--visible': this.visible,
-      'trigger--inline': this.inline,
-      'trigger--fixed': !this.inline,
-    };
+    const buttonClasses = {
+        'trigger': true,
+        'trigger--visible': this.visible,
+        'trigger--inline': this.inline,
+        'trigger--fixed': !this.inline,
+      },
+      referenceStyles = {
+        'height': this.offset,
+      };
 
     return html`
-      ${this.inline ? html`` : html`<span class="reference"></span>`}
-      <button @click=${this.scrollTop} class=${classMap(classes)}>
+      ${
+        this.inline
+          ? html``
+          : html`<div class="reference" style=${styleMap(referenceStyles)}></div>`
+      }
+      <button @click=${this.scrollTop} class=${classMap(buttonClasses)}>
         <div class="message"><slot>${DEFAULT_MESSAGE}</slot></div>
         ${this.svg}
       </button>

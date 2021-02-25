@@ -8,14 +8,15 @@
 $buttonDim: 40px;
 
 .reference {
-  width: 0;
-  height: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .trigger {
   display: inline-flex;
   align-items: center;
-  color: var(--auro-color-ui-default-on-light);
+  color: var(--auro-color-ui-default-on-light, $auro-color-ui-default-on-light);
   cursor: pointer;
   
   &--inline {
@@ -30,9 +31,9 @@ $buttonDim: 40px;
     bottom: (-$buttonDim - 4px);
     height: $buttonDim;
     min-width: $buttonDim;
-    background-color: $auro-color-brand-neutral-100;
+    background-color: var(--auro-color-brand-neutral-100, $auro-color-brand-neutral-100);
     border: 1px solid;
-    border-color: $auro-color-brand-neutral-300;
+    border-color: var(--auro-color-brand-neutral-300, $auro-color-brand-neutral-300);
     border-radius: ($buttonDim / 2);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
     box-sizing: border-box;
@@ -54,12 +55,12 @@ $buttonDim: 40px;
   @media (hover: hover) {
     &--inline:active,
     &--inline:hover {
-      color: var(--auro-color-ui-hover-on-light);
+      color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
     }
 
     &--fixed:active,
     &--fixed:hover {
-      background-color: $auro-color-brand-neutral-200;
+      background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
 
       .message {
         max-width: 32ch;
@@ -72,10 +73,10 @@ $buttonDim: 40px;
   &:focus-visible {
     &.trigger--inline {
       &--inline {
-        color: var(--auro-color-ui-hover-on-light);
+        color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
       }
       &--fixed {
-        background-color: $auro-color-brand-neutral-200;
+        background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
 
         .message {
           max-width: 32ch;
