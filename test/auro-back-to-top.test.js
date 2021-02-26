@@ -105,21 +105,23 @@ describe('auro-back-to-top', () => {
       await expect(intersectionStub).to.not.have.been.called;
     });
 
-    it('customizes rootMargin to offset where intersection occurs with `rootmargintop` property', async () => {
+    it('customizes offset where intersection occurs with `offset` property', async () => {
       const el = await fixture(html`
-        <auro-back-to-top rootmargintop="20px"></auro-back-to-top>
-      `);
+        <auro-back-to-top offset="42vh"></auro-back-to-top>
+      `),
+      root = el.shadowRoot;
 
       await elementUpdated(el);
 
       await expect(intersectionStub).to.have.been.calledWith(sinon.match.func, sinon.match({
         root: null,
-        rootMargin: '20px 0px 0px 0px',
+        rootMargin: '0px 0px 0px 0px',
         threshold: [
           0.0,
           1.0
         ],
       }));
+      expect(root.querySelector('.reference').style.height).to.equal('42vh');
     });
 
     it('customizes ARIA label with `aria-label` property', async () => {
