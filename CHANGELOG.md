@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.2](https://github.com/AlaskaAirlines/auro-back-to-top/compare/v1.0.1...v1.0.2) (2021-02-26)
+
+
+### Bug Fixes
+
+* use absolute positioning for ref element, use var color fallbacks ([547c54a](https://github.com/AlaskaAirlines/auro-back-to-top/commit/547c54a6b08b3785ca19f943040993c30b955ac6))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v1.0.0...v1.0.1) (2021-02-25)
 
 
