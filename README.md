@@ -1,6 +1,6 @@
-# Backtotop
+# Back-to-top
 
-`<auro-backtotop>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of helping visitors quickly return to page top.
+`<auro-back-to-top>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of helping visitors quickly return to page top.
 
 ## UI development browser support
 
@@ -8,12 +8,12 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-backtotop/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-backtotop/actions?query=workflow%3A%22test+and+publish%22)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-backtotop?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-backtotop)
-[![License](https://img.shields.io/npm/l/@aurolabs/auro-backtotop?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-back-to-top/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-back-to-top/actions?query=workflow%3A%22test+and+publish%22)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-back-to-top?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-back-to-top)
+[![License](https://img.shields.io/npm/l/@aurolabs/auro-back-to-top?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurolabs/auro-backtotop
+$ npm i @aurolabs/auro-back-to-top
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -30,21 +30,21 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 
 ### Define dependency in project component
 
-Defining the component dependency within each component that is using the `<auro-backtotop>` component.
+Defining the component dependency within each component that is using the `<auro-back-to-top>` component.
 
 ```javascript
-import "@aurolabs/auro-backtotop";
+import "@aurolabs/auro-back-to-top";
 ```
 
 **Reference component in HTML**
 
 ```html
-<auro-backtotop></auro-backtotop>
+<auro-back-to-top></auro-back-to-top>
 ```
 
 ## Install bundled assets from CDN
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-backtotop__bundled.js` for modern browsers and `auro-backtotop__bundled.es5.js` for legacy browsers (including IE11).
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-back-to-top__bundled.js` for modern browsers and `auro-back-to-top__bundled.es5.js` for legacy browsers (including IE11).
 
 Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
 
@@ -54,13 +54,13 @@ Since the legacy bundle includes many polyfills that are not needed by modern br
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@aurolabs/auro-backtotop@latest/dist/auro-backtotop__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@aurolabs/auro-backtotop@latest/dist/auro-backtotop__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@aurolabs/auro-back-to-top@latest/dist/auro-back-to-top__bundled.js" type="module"></script>
+<script src="https://unpkg.com/@aurolabs/auro-back-to-top@latest/dist/auro-back-to-top__bundled.es5.js" nomodule></script>
 ```
 
-## auro-backtotop use cases
+## auro-back-to-top use cases
 
-The `<auro-backtotop>` element should be used in situations where users may:
+The `<auro-back-to-top>` element should be used in situations where users may:
 
 * informational pages with many sections
 * pages with infinite scroll
@@ -70,32 +70,32 @@ The `<auro-backtotop>` element should be used in situations where users may:
 Default (fixed positioning):
 
 ```html
-<auro-backtotop></auro-backtotop>
+<auro-back-to-top></auro-back-to-top>
 ```
 
 Adjust how soon or delayed the button shows either by where you include the element in your document or with the `rootmargintop` property:
 
 ```html
 <!-- delay showing the button by 120px -->
-<auro-backtotop rootmargintop="120px"></auro-backtotop>
+<auro-back-to-top rootmargintop="120px"></auro-back-to-top>
 ```
 
 To display inline:
 
 ```html
-<auro-backtotop inline></auro-backtotop>
+<auro-back-to-top inline></auro-back-to-top>
 ```
 
 For i18n support:
 
 ```html
-<auro-backtotop arialabel="volver arriba">volver arriba</auro-backtotop>
+<auro-back-to-top arialabel="volver arriba">volver arriba</auro-back-to-top>
 ```
 
 You can customize what renders in the button:
 
 ```html
-<auro-backtotop inline arialabel="zoom back to top">zoom zoom! 🚀</auro-backtotop>
+<auro-back-to-top inline arialabel="zoom back to top">zoom zoom! 🚀</auro-back-to-top>
 ```
 
 ## Development
@@ -119,7 +119,7 @@ $ npm run serve
 Open [localhost:8000](http://localhost:8000/)
 
 ### Testing
-Automated tests are required for every Auro component. See `.\test\auro-backtotop.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
+Automated tests are required for every Auro component. See `.\test\auro-back-to-top.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
 ### Demo deployment
 

@@ -1,1 +1,1 @@
-export * from './dist/auro-backtotop';
+export * from './dist/auro-back-to-top';

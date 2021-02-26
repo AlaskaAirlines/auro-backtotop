@@ -26,10 +26,10 @@ const getSharedPlugins = (isLegacy) => [
 ];
 
 const modernConfig = {
-  input: 'src/auro-backtotop.js',
+  input: 'src/auro-back-to-top.js',
   output: {
     format: 'esm',
-    file: 'dist/auro-backtotop__bundled.js'
+    file: 'dist/auro-back-to-top__bundled.js'
   },
   plugins: [
     // remove shady DOM polyfill for modern browsers
@@ -55,7 +55,7 @@ const legacyConfig = {
   input: 'src/es5.js',
   output: {
     format: 'iife',
-    file: 'dist/auro-backtotop__bundled.es5.js'
+    file: 'dist/auro-back-to-top__bundled.es5.js'
   },
   plugins: getSharedPlugins(true)
 };

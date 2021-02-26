@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: 'auro-backtotop: [feature summary]'
+title: 'auro-back-to-top: [feature summary]'
 labels: 'Type: Feature'
 assignees: blackfalcon
 

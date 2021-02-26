@@ -1,10 +1,10 @@
-# auro-backtotop
+# auro-back-to-top
 
 A component to help users quickly return to the top of a page.
 
 ## Fixed position trigger
 
-By default, the `auro-backtotop` element is fixed to the bottom-right corner of the screen. The floating button becomes visible as the user scrolls down the page. Developers can tune when the button appears based on where the `auro-backtotop` element is placed in the document and with the `offset` property. To show the button sooner, use a smaller value (example: `50vh`) and to delay for longer content, use a higher value (example: `200vh` or `400vh`). Keep in mind that setting an `offset` value greater than the content height will increase the overall height of the container.
+By default, the `auro-back-to-top` element is fixed to the bottom-right corner of the screen. The floating button becomes visible as the user scrolls down the page. Developers can tune when the button appears based on where the `auro-back-to-top` element is placed in the document and with the `offset` property. To show the button sooner, use a smaller value (example: `50vh`) and to delay for longer content, use a higher value (example: `200vh` or `400vh`). Keep in mind that setting an `offset` value greater than the content height will increase the overall height of the container.
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
@@ -12,7 +12,7 @@ By default, the `auro-backtotop` element is fixed to the bottom-right corner of 
   ```html
   <body>
     <article>
-      <auro-backtotop></auro-backtotop>
+      <auro-back-to-top></auro-back-to-top>
       <h3>Beowulf</h3>
       <p> ... </p>
       <p> ... </p>
@@ -20,7 +20,7 @@ By default, the `auro-backtotop` element is fixed to the bottom-right corner of 
     .
     .
     .
-    <auro-backtotop></auro-backtotop>
+    <auro-back-to-top></auro-back-to-top>
   </body>
   ```
 
@@ -69,13 +69,13 @@ To render the trigger always-visible and inline, use the `inline` property.
       <h4>The Knight's Tale</h4>
       <p> ... </p>
       <p> ... </p>
-      <auro-backtotop inline></auro-backtotop>
+      <auro-back-to-top inline></auro-back-to-top>
     </section>
     <section>
       <h4>The Miller's Tale</h4>
       <p> ... </p>
       <p> ... </p>
-      <auro-backtotop inline></auro-backtotop>
+      <auro-back-to-top inline></auro-back-to-top>
     </section>
   </article>
   ```
@@ -116,7 +116,7 @@ To render the trigger always-visible and inline, use the `inline` property.
     <p>He nevere yet no vileynye ne sayde</p>
     <p>In al his lyf unto no maner wight.</p>
     <p>He was a verray, parfit gentil knyght."</p>
-    <auro-backtotop inline></auro-backtotop>
+    <auro-back-to-top inline></auro-back-to-top>
   </section>
 </article>
 
@@ -132,7 +132,7 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <h3>I'm a Little Teapot</h3>
   <p> ... </p>
   <p> ... </p>
-  <auro-backtotop inline>hop to top! 🫖</auro-backtotop>
+  <auro-back-to-top inline>hop to top! 🫖</auro-back-to-top>
 </article>
   ```
 
@@ -147,9 +147,9 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <p>When I get all steamed up,</p>
   <p>Hear me shout,</p>
   <p>Tip me over and pour me out!</p>
-  <auro-backtotop inline>hop to top! 🫖</auro-backtotop>
+  <auro-back-to-top inline>hop to top! 🫖</auro-back-to-top>
 </article>
 
 <script>
-  document.body.append(document.createElement('auro-backtotop'));
+  document.body.append(document.createElement('auro-back-to-top'));
 </script>

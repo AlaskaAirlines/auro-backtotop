@@ -19,7 +19,7 @@ const
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-backtotop provides helps users quickly return to page top.
+ * auro-back-to-top provides helps users quickly return to page top.
  *
  * @attr {String}   arialabel - Customize `title` element of the default icon, viewed on tooltip and read by screenreaders
  * @attr {Boolean}  inline - Render the trigger inline, will always be visible
@@ -28,7 +28,7 @@ const
  *
  * @slot - Customize trigger content
  */
-class AuroBacktotop extends LitElement {
+class AuroBackToTop extends LitElement {
 
   static get properties() {
     return {
@@ -130,6 +130,6 @@ class AuroBacktotop extends LitElement {
 }
 
 /* istanbul ignore else */
-if (!customElements.get("auro-backtotop")) {
-  customElements.define("auro-backtotop", AuroBacktotop);
+if (!customElements.get("auro-back-to-top")) {
+  customElements.define("auro-back-to-top", AuroBackToTop);
 }
