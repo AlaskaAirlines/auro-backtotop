@@ -12,7 +12,6 @@ import styleCss from "./style-css.js";
 
 const
   DEFAULT_MESSAGE = 'back to top',
-  DEFAULT_ROOT_MARGIN_TOP = '0px',
   HIDDEN_INTERSECTION_RATIO = 0.0,
   VISIBLE_INTERSECTION_RATIO = 1.0,
   WINDOW_SCROLL_TOP = 0;
@@ -93,7 +92,7 @@ class AuroBackToTop extends LitElement {
       this.visible = entries.some((entry) => entry.intersectionRatio === HIDDEN_INTERSECTION_RATIO);
     }, {
       root: null,
-      rootMargin: `${this.rootmargintop || DEFAULT_ROOT_MARGIN_TOP} 0px 0px 0px`,
+      rootMargin: `0px 0px 0px 0px`,
       threshold: [
         HIDDEN_INTERSECTION_RATIO,
         VISIBLE_INTERSECTION_RATIO
