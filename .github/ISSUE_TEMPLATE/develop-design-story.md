@@ -1,7 +1,7 @@
 ---
 name: Development Story
 about: Crate a new user story to address the development process
-title: 'auro-backtotop; develop [feature]'
+title: 'auro-back-to-top; develop [feature]'
 labels: 'Status: Backlogged'
 ---
 

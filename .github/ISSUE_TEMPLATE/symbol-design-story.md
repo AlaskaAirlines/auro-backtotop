@@ -1,7 +1,7 @@
 ---
 name: Symbolize Design Story
 about: Crate a new user story to address the symbol creation process
-title: 'auro-backtotop; design [feature] symbolize'
+title: 'auro-back-to-top; design [feature] symbolize'
 labels: 'Status: Backlogged'
 ---
 

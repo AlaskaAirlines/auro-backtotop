@@ -7,13 +7,13 @@
     "  3. Go to http://localhost:8000",
     "================================================================================"
   ],
-  "name": "@aurolabs/auro-backtotop",
+  "name": "@aurolabs/auro-back-to-top",
   "version": "1.0.1",
-  "description": "Auro custom auro-backtotop element",
+  "description": "Auro custom auro-back-to-top element",
   "author": "Product design and research",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlaskaAirlines/auro-backtotop"
+    "url": "https://github.com/AlaskaAirlines/auro-back-to-top"
   },
   "main": "index.js",
   "license": "Apache-2.0",
@@ -94,7 +94,7 @@
   ],
   "scripts": {
     "build": "npm run ciBuild",
-    "apiBuild": "wca analyze 'src/auro-backtotop.js' --outFiles docs/api.md",
+    "apiBuild": "wca analyze 'src/auro-back-to-top.js' --outFiles docs/api.md",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
     "postinstall": "node packageScripts/postinstall.js",

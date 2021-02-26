@@ -1,10 +1,10 @@
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import sinon from 'sinon';
-import '../src/auro-backtotop.js';
+import '../src/auro-back-to-top.js';
 
 /* eslint-disable no-magic-numbers */
 
-describe('auro-backtotop', () => {
+describe('auro-back-to-top', () => {
   const sandbox = sinon.createSandbox();
   let intersectionStub, observeStub; // eslint-disable-line init-declarations
 
@@ -20,7 +20,7 @@ describe('auro-backtotop', () => {
 
   it('is accessible', async () => {
     const el = await fixture(html`
-      <auro-backtotop></auro-backtotop>
+      <auro-back-to-top></auro-back-to-top>
     `);
 
     await expect(el).to.be.accessible();
@@ -28,7 +28,7 @@ describe('auro-backtotop', () => {
 
   it('defines fixed trigger and Intersection Observer', async () => {
     const el = await fixture(html`
-      <auro-backtotop></auro-backtotop>
+      <auro-back-to-top></auro-back-to-top>
     `),
      root = el.shadowRoot,
      iconEl = root.querySelector('.icon'), // eslint-disable-line sort-vars
@@ -48,7 +48,7 @@ describe('auro-backtotop', () => {
 
   it('sets up an Intersection Observer', async () => {
     const el = await fixture(html`
-      <auro-backtotop></auro-backtotop>
+      <auro-back-to-top></auro-back-to-top>
     `),
      root = el.shadowRoot,
      referenceEl = root.querySelector('.reference'); // eslint-disable-line sort-vars
@@ -72,7 +72,7 @@ describe('auro-backtotop', () => {
   it('scrolls to top on trigger click', async () => {
     sandbox.spy(window, 'scrollTo');
     const el = await fixture(html`
-      <auro-backtotop></auro-backtotop>
+      <auro-back-to-top></auro-back-to-top>
     `),
      triggerEl = el.shadowRoot.querySelector('.trigger');
 
@@ -86,7 +86,7 @@ describe('auro-backtotop', () => {
   describe('properties', () => {
     it('defines only inline element with `inline` property', async () => {
       const el = await fixture(html`
-      <auro-backtotop inline></auro-backtotop>
+      <auro-back-to-top inline></auro-back-to-top>
       `),
       root = el.shadowRoot,
       iconEl = root.querySelector('.icon'), // eslint-disable-line sort-vars
@@ -107,7 +107,7 @@ describe('auro-backtotop', () => {
 
     it('customizes rootMargin to offset where intersection occurs with `rootmargintop` property', async () => {
       const el = await fixture(html`
-        <auro-backtotop rootmargintop="20px"></auro-backtotop>
+        <auro-back-to-top rootmargintop="20px"></auro-back-to-top>
       `);
 
       await elementUpdated(el);
@@ -124,7 +124,7 @@ describe('auro-backtotop', () => {
 
     it('customizes ARIA label with `aria-label` property', async () => {
       const el = await fixture(html`
-        <auro-backtotop arialabel="hop to top"></auro-backtotop>
+        <auro-back-to-top arialabel="hop to top"></auro-back-to-top>
       `),
       root = el.shadowRoot,
       iconEl = root.querySelector('.icon'); // eslint-disable-line sort-vars
