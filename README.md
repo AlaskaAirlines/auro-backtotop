@@ -104,11 +104,11 @@ You can customize what renders in the button:
 
 Issues with `auro-back-to-top` element and its fixed-position button may trace back to stacking context. For a good time learning about how the browser decides where to position elements and stacking contexts, the [MDN documentation on `position`](https://developer.mozilla.org/en-US/docs/Web/CSS/position) is a great start.
 
-#### **The button does not become visible at the expected scroll height**
+### **The button does not become visible at the expected scroll height**
 
 To know when to show and hide the fixed button, `auro-back-to-top` uses a reference element positioned absolutely to `top`. Placing the `auro-back-to-top` as the last content node in the `body` is encouraged. If not possible, look for parent nodes with `position` set other than the default, static. 
 
-#### **The button scrolls _under_ elements on the page**
+### **The button scrolls _under_ elements on the page**
 
 The fixed button applies a high `z-index` to improve its odds of rendering above content but it can still lose. The suggestion above can help here, too: placing the `auro-back-to-top` as the last content node in the `body`. If not possible, inspect the `position` and `z-index` styles applied to elements it scrolls under, use negative z-index if necessary to allow the button to scroll over top.
 
