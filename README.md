@@ -100,9 +100,9 @@ You can customize what renders in the button:
 <auro-back-to-top inline arialabel="zoom back to top">zoom zoom! 🚀</auro-back-to-top>
 ```
 
-## Known issues and workarounds
+## Possible issues and workarounds
 
-Known issues with `auro-back-to-top` element and its fixed-position button trace back to stacking context. The [MDN documentation on `position`](https://developer.mozilla.org/en-US/docs/Web/CSS/position) explains how this works in more detail.
+Issues with `auro-back-to-top` element and its fixed-position button may trace back to stacking context. For a good time learning about how the browser decides where to position elements and stacking contexts, the [MDN documentation on `position`](https://developer.mozilla.org/en-US/docs/Web/CSS/position) is a great start.
 
 #### **The button does not become visible at the expected scroll height**
 
