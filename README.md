@@ -2,6 +2,8 @@
 
 `<auro-back-to-top>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of helping visitors quickly return to page top.
 
+![demo showing the button scroll into view and button click to return to top](docs/demo_auro-back-to-top.GIF)
+
 ## UI development browser support
 
 For the most up to date information on [UI development browser support](https://auro.alaskaair.com/support/browsersSupport)
