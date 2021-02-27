@@ -10,7 +10,7 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-back-to-top/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-back-to-top/actions?query=workflow%3A%22test+and+publish%22)
+[![Test and publish](https://github.com/AlaskaAirlines/auro-back-to-top/actions/workflows/testPublish.yml/badge.svg?branch=main)](https://github.com/AlaskaAirlines/auro-back-to-top/actions/workflows/testPublish.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-back-to-top?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-back-to-top)
 [![License](https://img.shields.io/npm/l/@aurolabs/auro-back-to-top?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
