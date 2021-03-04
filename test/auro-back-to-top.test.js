@@ -38,7 +38,6 @@ describe('auro-back-to-top', () => {
     await elementUpdated(el);
 
     await expect(iconEl, 'Expect icon element to exist').to.exist;
-    await expect(iconEl.querySelector('title').textContent).to.match(/back to top/iu);
     await expect(referenceEl, 'Expect reference element to exist').to.exist;
     await expect(triggerEl, 'Expect trigger element to exist').to.exist;
     await expect(triggerEl.classList.contains('trigger--inline')).to.be.false;
@@ -96,7 +95,6 @@ describe('auro-back-to-top', () => {
       await elementUpdated(el);
 
       await expect(iconEl, 'Expect icon element to exist').to.exist;
-      await expect(iconEl.querySelector('title').textContent).to.match(/back to top/iu);
       await expect(referenceEl, 'Expect reference element to not exist').to.not.exist;
       await expect(triggerEl, 'Expect trigger element to exist').to.exist;
       await expect(triggerEl.classList.contains('trigger--inline')).to.be.true;
@@ -122,18 +120,6 @@ describe('auro-back-to-top', () => {
         ],
       }));
       expect(root.querySelector('.reference').style.height).to.equal('42vh');
-    });
-
-    it('customizes ARIA label with `aria-label` property', async () => {
-      const el = await fixture(html`
-        <auro-back-to-top arialabel="hop to top"></auro-back-to-top>
-      `),
-      root = el.shadowRoot,
-      iconEl = root.querySelector('.icon'); // eslint-disable-line sort-vars
-
-      await elementUpdated(el);
-
-      await expect(iconEl.querySelector('title').textContent).to.match(/hop to top/iu);
     });
   });
 });
