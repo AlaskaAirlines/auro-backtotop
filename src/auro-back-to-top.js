@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -20,7 +19,6 @@ const
 /**
  * auro-back-to-top provides helps users quickly return to page top.
  *
- * @attr {String}   arialabel - Customize `title` element of the default icon, viewed on tooltip and read by screenreaders
  * @attr {Boolean}  inline - Render the trigger inline, will always be visible
  * @attr {String}   offset - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
  * @attr {Boolean}  visible - Indicates trigger visibility
@@ -31,9 +29,6 @@ class AuroBackToTop extends LitElement {
 
   static get properties() {
     return {
-      arialabel: {
-        type: String,
-      },
       inline: {
         type: Boolean,
       },
@@ -46,19 +41,8 @@ class AuroBackToTop extends LitElement {
     };
   }
 
-  get arialabel() {
-    return this._arialabel;
-  }
-
-  set arialabel(newValue) {
-    this._arialabel = newValue;
-    this.svg.querySelector('title').textContent = newValue;
-  }
-
   constructor() {
     super();
-
-    this._arialabel = DEFAULT_MESSAGE;
 
     this.inline = false;
     this.offset = '100vh';
@@ -68,7 +52,6 @@ class AuroBackToTop extends LitElement {
      svg = dom.body.firstChild;
 
     svg.classList.add('icon');
-    svg.querySelector('title').textContent = this.arialabel;
 
     this.svg = svg;
   }
