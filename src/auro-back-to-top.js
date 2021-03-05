@@ -67,8 +67,8 @@ class AuroBackToTop extends LitElement {
   }
 
   firstUpdated() {
-    this.visible = !IntersectionObserver || this.inline;
-    if (!IntersectionObserver || this.inline) {
+    this.visible = !('IntersectionObserver' in window) || this.inline;
+    if (!('IntersectionObserver' in window) || this.inline) {
       return
     }
     const observer = new IntersectionObserver((entries) => {
