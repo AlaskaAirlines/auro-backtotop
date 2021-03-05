@@ -23,6 +23,12 @@ $buttonDim: 40px;
     position: static;
     background-color: transparent;
     border: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
+    }
   }
 
   &--fixed {
@@ -46,20 +52,10 @@ $buttonDim: 40px;
       white-space: nowrap;
       transition: max-width 0.25s ease, padding-left 0.25s ease;
     }
-  }
 
-  &--visible {
-    bottom: 24px;
-  }
-
-  @media (hover: hover) {
-    &--inline:active,
-    &--inline:hover {
-      color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
-    }
-
-    &--fixed:active,
-    &--fixed:hover {
+    &:active,
+    &:focus,
+    &:hover {
       background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
 
       .message {
@@ -68,21 +64,8 @@ $buttonDim: 40px;
       }
     }
   }
-  
-  &.focus-visible,
-  &:focus-visible {
-    &.trigger--inline {
-      &--inline {
-        color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
-      }
-      &--fixed {
-        background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
 
-        .message {
-          max-width: 32ch;
-          padding-left: 8px;
-        }
-      }
-    }
+  &--visible {
+    bottom: 24px;
   }
 }
