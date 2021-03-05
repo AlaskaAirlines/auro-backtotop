@@ -11,7 +11,7 @@ By default, the `auro-back-to-top` element is fixed to the bottom-right corner o
 
   ```html
   <body>
-    <article>
+    <article id="top" tabindex="-1">
       <auro-back-to-top></auro-back-to-top>
       <h3>Beowulf</h3>
       <p> ... </p>
@@ -20,7 +20,7 @@ By default, the `auro-back-to-top` element is fixed to the bottom-right corner o
     .
     .
     .
-    <auro-back-to-top></auro-back-to-top>
+    <auro-back-to-top focus="top"></auro-back-to-top>
   </body>
   ```
 
@@ -63,7 +63,7 @@ To render the trigger always-visible and inline, use the `inline` property.
   <span slot="trigger">See code</span>
 
   ```html
-  <article>
+  <article id="top" tabindex="-1">
     <h3>The Canterbury Tales</h3>
     <section>
       <h4>The Knight's Tale</h4>
@@ -75,7 +75,7 @@ To render the trigger always-visible and inline, use the `inline` property.
       <h4>The Miller's Tale</h4>
       <p> ... </p>
       <p> ... </p>
-      <auro-back-to-top inline></auro-back-to-top>
+      <auro-back-to-top focus="top" inline></auro-back-to-top>
     </section>
   </article>
   ```
@@ -116,7 +116,7 @@ To render the trigger always-visible and inline, use the `inline` property.
     <p>He nevere yet no vileynye ne sayde</p>
     <p>In al his lyf unto no maner wight.</p>
     <p>He was a verray, parfit gentil knyght."</p>
-    <auro-back-to-top inline></auro-back-to-top>
+    <auro-back-to-top focus="top" inline></auro-back-to-top>
   </section>
 </article>
 
@@ -128,11 +128,11 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <span slot="trigger">See code</span>
 
   ```html
-  <article>
+  <article id="top" tabindex="-1">
   <h3>I'm a Little Teapot</h3>
   <p> ... </p>
   <p> ... </p>
-  <auro-back-to-top inline>hop to top! 🫖</auro-back-to-top>
+  <auro-back-to-top focus="top" inline>hop to top! 🫖</auro-back-to-top>
 </article>
   ```
 
@@ -147,9 +147,14 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <p>When I get all steamed up,</p>
   <p>Hear me shout,</p>
   <p>Tip me over and pour me out!</p>
-  <auro-back-to-top inline>hop to top! 🫖</auro-back-to-top>
+  <auro-back-to-top focus="top" inline>hop to top! 🫖</auro-back-to-top>
 </article>
 
 <script>
-  document.body.append(document.createElement('auro-back-to-top'));
+  (function () {
+    document.body.append(document.createElement('auro-back-to-top'));
+    const mainEl = document.querySelector('main');
+    mainEl.setAttribute('id', 'top');
+    mainEl.setAttribute('tabindex', '-1');
+  })();
 </script>
