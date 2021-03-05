@@ -19,16 +19,19 @@ const
 /**
  * auro-back-to-top provides helps users quickly return to page top.
  *
+ * @attr {String}   focus - Id attribute of the element to receive focus when trigger is clicked
  * @attr {Boolean}  inline - Render the trigger inline, will always be visible
  * @attr {String}   offset - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
- * @attr {Boolean}  visible - Indicates trigger visibility
  *
- * @slot - Customize trigger content
+ * @slot - Customize trigger message
  */
 class AuroBackToTop extends LitElement {
 
   static get properties() {
     return {
+      focus: {
+        type: String,
+      },
       inline: {
         type: Boolean,
       },
@@ -36,16 +39,21 @@ class AuroBackToTop extends LitElement {
         type: String,
       },
       visible: {
+        attribute: false,
         type: Boolean,
-      }
+      },
     };
   }
 
   constructor() {
     super();
-
     this.inline = false;
     this.offset = '100vh';
+
+    /**
+     * @private
+     * Whether the trigger button is visible, does not apply to inline trigger.
+     */
     this.visible = false;
 
     const dom = new DOMParser().parseFromString(arrowUp.svg, 'text/html'),
@@ -53,6 +61,10 @@ class AuroBackToTop extends LitElement {
 
     svg.classList.add('icon');
 
+      /**
+       * @private
+       * Reference to arrow-up svg icon
+       */
     this.svg = svg;
   }
 
@@ -62,8 +74,41 @@ class AuroBackToTop extends LitElement {
     `;
   }
 
-  scrollTop() {
+  /**
+   * @private
+   * Set focus by element id for accessibility of keyboard users
+   * @returns {void}
+   */
+  setFocus() {
+    if (!this.focus) {
+      console.warn('Required `focus` attribute missing, this will harm accessibility.'); // eslint-disable-line no-console
+
+      return;
+    }
+
+    const focusEl = document.getElementById(this.focus);
+
+    if (!focusEl) {
+      console.warn(`No element found with id ${this.focus}, check that the element exists and has the expected id attribute.`); // eslint-disable-line no-console
+
+      return;
+    }
+
+    focusEl.focus({ preventScroll: true });
+
+    if (document.activeElement !== focusEl) {
+      console.warn(`Element with id ${this.focus}, check this is a focusable element or assign tabindex value of -1 so it can programmatically receive focus.`); // eslint-disable-line no-console
+    }
+  }
+
+  /**
+   * @private
+   * Handle trigger click by scrolling to window top and setting focus
+   * @returns {void}
+   */
+  onTriggerClick() {
     window.scrollTo(window.scrollX, WINDOW_SCROLL_TOP);
+    this.setFocus();
   }
 
   firstUpdated() {
@@ -103,7 +148,7 @@ class AuroBackToTop extends LitElement {
           ? html``
           : html`<div class="reference" style=${styleMap(referenceStyles)}></div>`
       }
-      <button @click=${this.scrollTop} class=${classMap(buttonClasses)}>
+      <button @click=${this.onTriggerClick} class=${classMap(buttonClasses)}>
         <div class="message"><slot>${DEFAULT_MESSAGE}</slot></div>
         ${this.svg}
       </button>
