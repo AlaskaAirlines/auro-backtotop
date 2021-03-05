@@ -45,6 +45,26 @@ describe('auro-back-to-top', () => {
     await expect(triggerEl.textContent).to.match(/back to top/iu);
   });
 
+  it('defines fixed trigger and is always visible when Intersection Observers are not supported', async () => {
+    Reflect.deleteProperty(window, 'IntersectionObserver');
+    const el = await fixture(html`
+      <auro-back-to-top></auro-back-to-top>
+    `),
+     root = el.shadowRoot,
+     iconEl = root.querySelector('.icon'), // eslint-disable-line sort-vars
+     referenceEl = root.querySelector('.reference'), // eslint-disable-line sort-vars
+     triggerEl = root.querySelector('.trigger');
+
+    await elementUpdated(el);
+
+    await expect(iconEl, 'Expect icon element to exist').to.exist;
+    await expect(referenceEl, 'Expect reference element to exist (even though it will not be used').to.exist;
+    await expect(triggerEl, 'Expect trigger element to exist').to.exist;
+    await expect(triggerEl.classList.contains('trigger--inline')).to.be.false;
+    await expect(triggerEl.classList.contains('trigger--visible')).to.be.true;
+    await expect(triggerEl.textContent).to.match(/back to top/iu);
+  });
+
   it('sets up an Intersection Observer', async () => {
     const el = await fixture(html`
       <auro-back-to-top></auro-back-to-top>
