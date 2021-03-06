@@ -152,7 +152,9 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
 
 <script>
   (function () {
-    document.body.append(document.createElement('auro-back-to-top'));
+    const fixedEl = document.createElement('auro-back-to-top');
+    fixedEl.setAttribute('focus', 'top');
+    document.body.append(fixedEl);
     const mainEl = document.querySelector('main');
     mainEl.setAttribute('id', 'top');
     mainEl.setAttribute('tabindex', '-1');
