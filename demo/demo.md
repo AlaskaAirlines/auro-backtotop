@@ -20,7 +20,7 @@ By default, the `auro-back-to-top` element is fixed to the bottom-right corner o
     .
     .
     .
-    <auro-back-to-top focus="top"></auro-back-to-top>
+    <auro-back-to-top focus-id="top"></auro-back-to-top>
   </body>
   ```
 
@@ -75,7 +75,7 @@ To render the trigger always-visible and inline, use the `inline` property.
       <h4>The Miller's Tale</h4>
       <p> ... </p>
       <p> ... </p>
-      <auro-back-to-top focus="top" inline></auro-back-to-top>
+      <auro-back-to-top focus-id="top" inline></auro-back-to-top>
     </section>
   </article>
   ```
@@ -116,7 +116,7 @@ To render the trigger always-visible and inline, use the `inline` property.
     <p>He nevere yet no vileynye ne sayde</p>
     <p>In al his lyf unto no maner wight.</p>
     <p>He was a verray, parfit gentil knyght."</p>
-    <auro-back-to-top focus="top" inline></auro-back-to-top>
+    <auro-back-to-top focus-id="top" inline></auro-back-to-top>
   </section>
 </article>
 
@@ -132,7 +132,7 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <h3>I'm a Little Teapot</h3>
   <p> ... </p>
   <p> ... </p>
-  <auro-back-to-top focus="top" inline>hop to top! 🫖</auro-back-to-top>
+  <auro-back-to-top focus-id="top" inline>hop to top! 🫖</auro-back-to-top>
 </article>
   ```
 
@@ -147,13 +147,13 @@ The trigger content--the arrow-up icon and text--can be customized to anything y
   <p>When I get all steamed up,</p>
   <p>Hear me shout,</p>
   <p>Tip me over and pour me out!</p>
-  <auro-back-to-top focus="top" inline>hop to top! 🫖</auro-back-to-top>
+  <auro-back-to-top focus-id="top" inline>hop to top! 🫖</auro-back-to-top>
 </article>
 
 <script>
   (function () {
     const fixedEl = document.createElement('auro-back-to-top');
-    fixedEl.setAttribute('focus', 'top');
+    fixedEl.setAttribute('focus-id', 'top');
     document.body.append(fixedEl);
     const mainEl = document.querySelector('main');
     mainEl.setAttribute('id', 'top');

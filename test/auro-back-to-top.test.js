@@ -86,17 +86,22 @@ describe('auro-back-to-top', () => {
   });
 
   it('scrolls to top on trigger click', async () => {
-    sandbox.spy(window, 'scrollTo');
-    const el = await fixture(html`
-      <auro-back-to-top></auro-back-to-top>
-    `),
-     triggerEl = el.shadowRoot.querySelector('.trigger');
+  sandbox.spy(window, 'scrollTo');
+  const parentNode = document.createElement('main');
 
-     await elementUpdated(el);
+  parentNode.setAttribute('id', 'top');
 
-     await triggerEl.click();
-     await expect(window.scrollTo).to.have.been.calledOnce;
-     await expect(window.scrollTo).to.have.been.calledWith(0, 0);
+  // eslint-disable-next-line one-var
+  const el = await fixture(html`
+      <auro-back-to-top inline focus-id="top"></auro-back-to-top>
+    `, { parentNode }),
+    triggerEl = el.shadowRoot.querySelector('.trigger');
+
+  await elementUpdated(el);
+
+  await triggerEl.click();
+  
+  expect(window.scrollTo).to.have.been.calledOnceWith(0, parentNode.clientTop);
   });
 
   describe('properties', () => {
@@ -128,7 +133,7 @@ describe('auro-back-to-top', () => {
 
       await elementUpdated(el);
 
-      await expect(intersectionStub).to.have.been.calledWith(sinon.match.func, sinon.match({
+      expect(intersectionStub).to.have.been.calledWith(sinon.match.func, sinon.match({
         root: null,
         rootMargin: '0px 0px 0px 0px',
         threshold: [
@@ -147,7 +152,7 @@ describe('auro-back-to-top', () => {
 
       // eslint-disable-next-line one-var
       const el = await fixture(html`
-        <auro-back-to-top inline focus="top"></auro-back-to-top>
+        <auro-back-to-top inline focus-id="top"></auro-back-to-top>
       `, { parentNode });
 
       await elementUpdated(el);
@@ -170,10 +175,9 @@ describe('auro-back-to-top', () => {
 
       await elementUpdated(el);
       await el.shadowRoot.querySelector('.trigger').click();
-      
+
       expect(document.activeElement).not.to.equal(parentNode);
-      expect(consoleWarnStub).to.have.been.calledOnce;
-      expect(consoleWarnStub).to.have.been.calledWith(sinon.match(/required `focus` attribute missing/iu));
+      expect(consoleWarnStub).to.have.been.calledOnceWith(sinon.match(/required `focus` attribute missing/iu));
     });
     it('warn when element with id matching `focus` property cannot be found', async() => {
       const parentNode = document.createElement('main');
@@ -183,15 +187,14 @@ describe('auro-back-to-top', () => {
 
       // eslint-disable-next-line one-var
       const el = await fixture(html`
-        <auro-back-to-top inline focus="broken"></auro-back-to-top>
+        <auro-back-to-top inline focus-id="broken"></auro-back-to-top>
       `, { parentNode });
 
       await elementUpdated(el);
       await el.shadowRoot.querySelector('.trigger').click();
 
       expect(document.activeElement).not.to.equal(parentNode);
-      expect(consoleWarnStub).to.have.been.calledOnce;
-      expect(consoleWarnStub).to.have.been.calledWith(sinon.match(/check that the element exists/iu));
+      expect(consoleWarnStub).to.have.been.calledOnceWith(sinon.match(/check that the element exists/iu));
     });
     it('warns when element with id matching `focus` property cannot receive focus', async() => {
       const parentNode = document.createElement('main');
@@ -200,15 +203,14 @@ describe('auro-back-to-top', () => {
 
       // eslint-disable-next-line one-var
       const el = await fixture(html`
-        <auro-back-to-top inline focus="top"></auro-back-to-top>
+        <auro-back-to-top inline focus-id="top"></auro-back-to-top>
       `, { parentNode });
 
       await elementUpdated(el);
       await el.shadowRoot.querySelector('.trigger').click();
 
       expect(document.activeElement).not.to.equal(parentNode);
-      expect(consoleWarnStub).to.have.been.calledOnce;
-      expect(consoleWarnStub).to.have.been.calledWith(sinon.match(/check this is a focusable element/iu));
+      expect(consoleWarnStub).to.have.been.calledOnceWith(sinon.match(/check this is a focusable element/iu));
     });
   });
 });
