@@ -7,6 +7,20 @@
 
 $buttonDim: 40px;
 
+@mixin inline-trigger-activated {
+  color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
+}
+
+@mixin fixed-trigger-activated {
+  color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
+  background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
+  
+  .message {
+    max-width: 32ch;
+    padding-left: 8px;
+  }
+}
+
 .reference {
   position: absolute;
   top: 0;
@@ -25,9 +39,12 @@ $buttonDim: 40px;
     border: none;
 
     &:active,
-    &:focus,
-    &:hover {
-      color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
+    &.focus-visible {
+      @include inline-trigger-activated;
+    }
+
+    &:focus-visible {
+      @include inline-trigger-activated;
     }
   }
 
@@ -44,28 +61,43 @@ $buttonDim: 40px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
     box-sizing: border-box;
     z-index: 99999;
-    transition: bottom 0.3s ease;
 
     .message {
       max-width: 0;
       overflow: hidden;
       white-space: nowrap;
-      transition: max-width 0.25s ease, padding-left 0.25s ease;
+      user-select: none;
     }
 
     &:active,
-    &:focus,
-    &:hover {
-      background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
-
-      .message {
-        max-width: 32ch;
-        padding-left: 8px;
-      }
+    &.focus-visible {
+      @include fixed-trigger-activated;
+    }
+    
+    &:focus-visible {
+      @include fixed-trigger-activated;
     }
   }
 
   &--visible {
     bottom: 24px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &--fixed {
+      transition: bottom 0.3s ease;
+      .message {
+        transition: max-width 0.25s ease, padding-left 0.25s ease;
+      }
+    }
+  }
+
+  @media (hover:hover) {
+    &--inline:hover {
+      @include inline-trigger-activated;
+    }
+    &--fixed:hover {
+      @include fixed-trigger-activated;
+    }
   }
 }
