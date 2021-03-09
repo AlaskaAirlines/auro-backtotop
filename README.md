@@ -72,32 +72,43 @@ The `<auro-back-to-top>` element should be used in situations where users may:
 Default (fixed positioning):
 
 ```html
-<auro-back-to-top></auro-back-to-top>
+<auro-back-to-top focus-id="top"></auro-back-to-top>
+```
+
+The most important--and required--attribute to this element is `focus-id`. This is the id of an focusable element at the top of the page. When the trigger button is clicked to go back to top, the element will shift focus to the target element and scroll to its top position. A useful way to think of this is a reverse of the "Skip to main" affordance.
+
+Anchors or buttons are examples of focusable elements, but more likely the target is a `<div>`, `<main>`, `<section>` or other non-focusable element. To these, you'll need to add the `tabindex` attribute with a value of -1. This will allow the element to receive focus so your user can resume tabbing from the top of the page, but it will keep the target element out of the default tab order so users don't stumble into it at the start of the page.
+
+```html
+<main id="top" tabindex="-1">
+    ...
+    <auro-back-to-top focus-id="top"></auro-back-to-top>
+</main>
 ```
 
 Adjust how soon or delayed the button shows either by where you include the element in your document or with the `rootmargintop` property:
 
 ```html
-<!-- delay showing the button by 120px -->
-<auro-back-to-top rootmargintop="120px"></auro-back-to-top>
+<!-- delay showing the button until after user scrolls 3vh + 1vh (reference element out-of-screen) -->
+<auro-back-to-top focus-id="top" offset="3vh"></auro-back-to-top>
 ```
 
 To display inline:
 
 ```html
-<auro-back-to-top inline></auro-back-to-top>
+<auro-back-to-top focus-id="top" inline></auro-back-to-top>
 ```
 
 For i18n support:
 
 ```html
-<auro-back-to-top arialabel="volver arriba">volver arriba</auro-back-to-top>
+<auro-back-to-top focus-id="top">volver arriba</auro-back-to-top>
 ```
 
 You can customize what renders in the button:
 
 ```html
-<auro-back-to-top inline arialabel="zoom back to top">zoom zoom! 🚀</auro-back-to-top>
+<auro-back-to-top focus-id="top" inline>zoom zoom! 🚀</auro-back-to-top>
 ```
 
 ## Possible issues and workarounds
@@ -111,6 +122,10 @@ To know when to show and hide the fixed button, `auro-back-to-top` uses a refere
 ### **The button scrolls _under_ elements on the page**
 
 The fixed button applies a high `z-index` to improve its odds of rendering above content but it can still lose. The suggestion above can help here, too: placing the `auro-back-to-top` as the last content node in the `body`. If not possible, inspect the `position` and `z-index` styles applied to elements it scrolls under, use negative z-index if necessary to allow the button to scroll over top.
+
+### Why is my page too tall?
+
+If you set a high offset, for example `offset="42vh"`, this will increase the total height of your content. Set `offset` value reasonably and check at different breakpoints so that it never calculates as taller than the content height.
 
 ## Development
 
