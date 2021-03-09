@@ -14,11 +14,11 @@ $buttonDim: 40px;
 @mixin fixed-trigger-activated {
   color: var(--auro-color-ui-hover-on-light, $auro-color-ui-hover-on-light);
   background-color: var(--auro-color-brand-neutral-200, $auro-color-brand-neutral-200);
-  
-  .message {
-    max-width: 32ch;
-    padding-left: 8px;
-  }
+}
+
+@mixin message-activated {
+  max-width: 32ch;
+  padding-left: 8px;
 }
 
 .reference {
@@ -53,7 +53,7 @@ $buttonDim: 40px;
     right: 24px;
     bottom: (-$buttonDim - 4px);
     height: $buttonDim;
-    min-width: $buttonDim;
+    width: $buttonDim;
     background-color: var(--auro-color-brand-neutral-100, $auro-color-brand-neutral-100);
     border: 1px solid;
     border-color: var(--auro-color-brand-neutral-300, $auro-color-brand-neutral-300);
@@ -93,11 +93,25 @@ $buttonDim: 40px;
   }
 
   @media (hover:hover) {
+    width: auto;
+
     &--inline:hover {
       @include inline-trigger-activated;
     }
     &--fixed:hover {
       @include fixed-trigger-activated;
+    }
+    &--fixed:active,
+    &--fixed:hover,
+    &--fixed.focus-visible {
+      .message {
+        @include message-activated;
+      }
+    }
+    &--fixed:focus-visible {
+      .message {
+        @include message-activated;
+      }
     }
   }
 }
