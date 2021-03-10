@@ -1,5 +1,21 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/auro-back-to-top/compare/v1.0.2...v1.1.0) (2021-03-10)
+
+
+### Bug Fixes
+
+* apply feedback from pull request ([ae96ea2](https://github.com/AlaskaAirlines/auro-back-to-top/commit/ae96ea2f85a1f3e13cd079bc0687a3568981d35b))
+* safely check if IntersectionObserver API supported ([66cb953](https://github.com/AlaskaAirlines/auro-back-to-top/commit/66cb9539bdd67a6e4b48e2fb168255947b8c5b3c))
+* simplify focus styles and show message ([cfdf8a9](https://github.com/AlaskaAirlines/auro-back-to-top/commit/cfdf8a96fb91fba50e0cd55c3adabb0e8fcdf0ee))
+* skip displaying message on touch screens ([6a1a1d5](https://github.com/AlaskaAirlines/auro-back-to-top/commit/6a1a1d527ec1bc59cbc1b99963ed26484f172d57))
+
+
+### Features
+
+* remove redundant aria-label from icon ([19804bc](https://github.com/AlaskaAirlines/auro-back-to-top/commit/19804bcd54098c350612453c5da8d726191a0a0f))
+* return focus to top page element, incl a11y warnings ([690ccaa](https://github.com/AlaskaAirlines/auro-back-to-top/commit/690ccaa9711b43f2faf7119e08c8085cf2fd0400))
+
 ## [1.0.2](https://github.com/AlaskaAirlines/auro-back-to-top/compare/v1.0.1...v1.0.2) (2021-02-26)
 
 
