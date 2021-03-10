@@ -41,7 +41,7 @@ import "@aurolabs/auro-back-to-top";
 **Reference component in HTML**
 
 ```html
-<auro-back-to-top></auro-back-to-top>
+<auro-back-to-top focus-id="top"></auro-back-to-top>
 ```
 
 ## Install bundled assets from CDN
@@ -62,20 +62,20 @@ Since the legacy bundle includes many polyfills that are not needed by modern br
 
 ## auro-back-to-top use cases
 
-The `<auro-back-to-top>` element should be used in situations where users may:
+The `<auro-back-to-top>` element can be used in the following situations:
 
 * informational pages with many sections
 * pages with infinite scroll
 
 ## API Code Examples
 
-Default (fixed positioning):
+### Fixed position (default)
 
 ```html
 <auro-back-to-top focus-id="top"></auro-back-to-top>
 ```
 
-The most important--and required--attribute to this element is `focus-id`. This is the id of an focusable element at the top of the page. When the trigger button is clicked to go back to top, the element will shift focus to the target element and scroll to its top position. A useful way to think of this is a reverse of the "Skip to main" affordance.
+The most important--and required--attribute to this element is `focus-id`. This is the id of a focusable element at the top of the page. When the user clicks the trigger button, the element will shift focus to the target element and scroll to its top position. A useful way to think of this is a reverse of the "Skip to main" affordance.
 
 Anchors or buttons are examples of focusable elements, but more likely the target is a `<div>`, `<main>`, `<section>` or other non-focusable element. To these, you'll need to add the `tabindex` attribute with a value of -1. This will allow the element to receive focus so your user can resume tabbing from the top of the page, but it will keep the target element out of the default tab order so users don't stumble into it at the start of the page.
 
@@ -86,17 +86,25 @@ Anchors or buttons are examples of focusable elements, but more likely the targe
 </main>
 ```
 
-Adjust how soon or delayed the button shows either by where you include the element in your document or with the `rootmargintop` property:
+Adjust how soon or delayed the button shows either by (1) where you include the element in the body and (2) with the `offset` attribute:
 
 ```html
 <!-- delay showing the button until after user scrolls 3vh + 1vh (reference element out-of-screen) -->
 <auro-back-to-top focus-id="top" offset="3vh"></auro-back-to-top>
 ```
 
-To display inline:
+### Inline position
 
 ```html
 <auro-back-to-top focus-id="top" inline></auro-back-to-top>
+```
+
+### Custom message
+
+You can customize the message in the button:
+
+```html
+<auro-back-to-top focus-id="top" inline>zoom zoom! 🚀</auro-back-to-top>
 ```
 
 For i18n support:
@@ -105,27 +113,21 @@ For i18n support:
 <auro-back-to-top focus-id="top">volver arriba</auro-back-to-top>
 ```
 
-You can customize what renders in the button:
-
-```html
-<auro-back-to-top focus-id="top" inline>zoom zoom! 🚀</auro-back-to-top>
-```
-
 ## Possible issues and workarounds
 
 Issues with `auro-back-to-top` element and its fixed-position button may trace back to stacking context. For a good time learning about how the browser decides where to position elements and stacking contexts, the [MDN documentation on `position`](https://developer.mozilla.org/en-US/docs/Web/CSS/position) is a great start.
 
-### **The button does not become visible at the expected scroll height**
+### **"he button doesn't become visible when expected, either too soon or too late**
 
-To know when to show and hide the fixed button, `auro-back-to-top` uses a reference element positioned absolutely to `top`. Placing the `auro-back-to-top` as the last content node in the `body` is encouraged. If not possible, look for parent nodes with `position` set other than the default, static. 
+To know when to show and hide the fixed button, `auro-back-to-top` uses a reference element positioned absolutely to `top`. Placing the `auro-back-to-top` as the last content node in the `body` is encouraged. If not possible, look for parent nodes with a `position` style other than static. 
 
 ### **The button scrolls _under_ elements on the page**
 
-The fixed button applies a high `z-index` to improve its odds of rendering above content but it can still lose. The suggestion above can help here, too: placing the `auro-back-to-top` as the last content node in the `body`. If not possible, inspect the `position` and `z-index` styles applied to elements it scrolls under, use negative z-index if necessary to allow the button to scroll over top.
+The fixed button uses `z-index` to improve its odds of rendering above content but it can still lose. The suggestion above can help here, too: placing the `auro-back-to-top` as the last content node in the `body`. If not possible, inspect the `position` and `z-index` styles applied to elements it scrolls under.
 
-### Why is my page too tall?
+### **Why is my page too tall?**
 
-If you set a high offset, for example `offset="42vh"`, this will increase the total height of your content. Set `offset` value reasonably and check at different breakpoints so that it never calculates as taller than the content height.
+If you set `offset` attribute to a high value, for example `offset="4200vh"`, this can increase the total height of your content. Set `offset` value reasonably and check at different breakpoints so that it never calculates as taller than the content height.
 
 ## Development
 

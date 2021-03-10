@@ -4,7 +4,7 @@ A component to help users quickly return to the top of a page.
 
 ## Fixed position trigger
 
-By default, the `auro-back-to-top` element is fixed to the bottom-right corner of the screen. The floating button becomes visible as the user scrolls down the page. Developers can tune when the button appears based on where the `auro-back-to-top` element is placed in the document and with the `offset` property. To show the button sooner, use a smaller value (example: `50vh`) and to delay for longer content, use a higher value (example: `200vh` or `400vh`). Keep in mind that setting an `offset` value greater than the content height will increase the overall height of the container.
+By default, the `auro-back-to-top` element is fixed to the bottom-right corner of the screen. The floating button becomes visible as the user scrolls down the page. Developers can tune when the button appears by (1) where they place `auro-back-to-top` in the body, and (2) with the `offset` property. Use a smaller value for `offset` attrbute to show the button sooner (example: `50vh`) and use a larger value (example: `200vh` or `400vh`) to delay showing the button on longer content. Keep in mind that `offset` can increase the container height when it is set to a value greater than the content height.
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
@@ -122,7 +122,7 @@ To render the trigger always-visible and inline, use the `inline` property.
 
 ## Custom trigger
 
-The trigger content--the arrow-up icon and text--can be customized to anything your heart desires, for i18n or just for fun.
+The trigger message can be customized to anything your heart desires, for i18n or just for fun.
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>

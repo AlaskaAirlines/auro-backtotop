@@ -16,7 +16,7 @@ const
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-back-to-top provides helps users quickly return to page top.
+ * auro-back-to-top provides users a way to quickly return to page top.
  *
  * @attr {String}   focus-id - Required id of element to receive focus when trigger is clicked. Target element needs to be focusable or have a tabindex value of -1.
  * @attr {Boolean}  inline - Render the trigger inline, will always be visible
