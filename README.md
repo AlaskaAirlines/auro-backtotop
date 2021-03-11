@@ -117,7 +117,7 @@ For i18n support:
 
 Issues with `auro-back-to-top` element and its fixed-position button may trace back to stacking context. For a good time learning about how the browser decides where to position elements and stacking contexts, the [MDN documentation on `position`](https://developer.mozilla.org/en-US/docs/Web/CSS/position) is a great start.
 
-### **"he button doesn't become visible when expected, either too soon or too late**
+### **The button doesn't become visible when expected, either too soon or too late**
 
 To know when to show and hide the fixed button, `auro-back-to-top` uses a reference element positioned absolutely to `top`. Placing the `auro-back-to-top` as the last content node in the `body` is encouraged. If not possible, look for parent nodes with a `position` style other than static. 
 
