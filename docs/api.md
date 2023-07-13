@@ -1,17 +1,23 @@
-# auro-back-to-top
+# auro-backtotop
 
-auro-back-to-top provides helps users quickly return to page top.
+auro-backtotop provides helps users quickly return to page top.
 
 ## Properties
 
-| Property  | Attribute  | Type      | Default | Description                                      |
-|-----------|------------|-----------|---------|--------------------------------------------------|
-| `focusId` | `focus-id` | `String`  |         | Required id of element to receive focus when trigger is clicked. Target element needs to be focusable or have a tabindex value of -1. |
-| `inline`  | `inline`   | `Boolean` | false   | Render the trigger inline, will always be visible |
-| `offset`  | `offset`   | `String`  | "100vh" | Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended) |
+| Property    | Attribute   | Type      | Default | Description                                      |
+|-------------|-------------|-----------|---------|--------------------------------------------------|
+| `disabled`  | `disabled`  | `Boolean` | false   | Render the trigger inline, will always be visible |
+| `secondary` | `secondary` | `Boolean` | false   | Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended) |
 
 ## Slots
 
-| Name | Description               |
-|------|---------------------------|
-|      | Customize trigger message |
+| Name | Description                              |
+|------|------------------------------------------|
+|      | Default slot for the text of the button. |
+
+## CSS Shadow Parts
+
+| Part     | Description                 |
+|----------|-----------------------------|
+| `button` | Apply CSS to HTML5 button.  |
+| `icon`   | Apply CSS to arrow up icon. |

@@ -17,14 +17,14 @@ $ git remote -v
 This should return
 
 ```bash
-origin  https://github.com/[yourUserName]/auro-back-to-top.git (fetch)
-origin  https://github.com/[yourUserName]/auro-back-to-top.git (push)
+origin  https://github.com/[yourUserName]/auro-backtotop.git (fetch)
+origin  https://github.com/[yourUserName]/auro-backtotop.git (push)
 ```
 
 To add the upstream repo to your local forked project
 
 ```bash
-$ git remote add upstream https://github.com/AlaskaAirlines/auro-back-to-top.git
+$ git remote add upstream https://github.com/AlaskaAirlines/auro-backtotop.git
 ```
 
 To validate this worked, run the following again
@@ -34,23 +34,28 @@ $ git remote -v
 ```
 
 ```
-origin  https://github.com/[yourUserName]/auro-back-to-top.git (fetch)
-origin  https://github.com/[yourUserName]/auro-back-to-top.git (push)
-upstream        https://github.com/AlaskaAirlines/auro-back-to-top.git (fetch)
-upstream        https://github.com/AlaskaAirlines/auro-back-to-top.git (push)
+origin  https://github.com/[yourUserName]/auro-backtotop.git (fetch)
+origin  https://github.com/[yourUserName]/auro-backtotop.git (push)
+upstream        https://github.com/AlaskaAirlines/auro-backtotop.git (fetch)
+upstream        https://github.com/AlaskaAirlines/auro-backtotop.git (push)
 ```
 
 #### Sync upstream
 
-To sync your master brach with your upstream master branch, there are two ways you can do this.
-
-One way is to fetch and merge. This will work if your `main` branch shares the same history as the upstream brach sans merged updates since fork or last sync.
+To sync your `main` branch with the upstream `main` branch, there are two ways you can do this. The preferred method is to fetch and rebase. Please do not merge down.
 
 ```bash
-$ git checkout master
+$ git checkout main
 
 $ git fetch upstream
-$ git merge upstream/main
+$ git rebase upstream/main
+```
+
+Then to sync your feature brach,
+
+```bash
+$ git checkout feature-branch
+$ git rebase main
 ```
 
 #### Brute force
