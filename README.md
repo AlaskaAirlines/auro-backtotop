@@ -1,155 +1,185 @@
-# Back-to-top
+<!--
+The README.md file is a compiled document. No edits should be made directly to this file.
 
-`<auro-back-to-top>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of helping visitors quickly return to page top.
+README.md is created by running `npm run build:docs`.
 
-![demo showing the button scroll into view and button click to return to top](docs/demo_auro-back-to-top.GIF)
+This file is generated based on a template fetched from
+`https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/README.md`
+and copied to `./componentDocs/README.md` each time the the docs are compiled.
+
+The following sections are editable by making changes to the following files:
+
+| SECTION                | DESCRIPTION                                       | FILE LOCATION                       |
+|------------------------|---------------------------------------------------|-------------------------------------|
+| Description            | Description of the component                      | `./docs/partials/description.md`    |
+| Use Cases              | Examples for when to use this component           | `./docs/partials/useCases.md`       |
+| Additional Information | For use to add any component specific information | `./docs/partials/readmeAddlInfo.md` |
+| Component Example Code | HTML sample code of the components use            | `./apiExamples/basic.html`          |
+-->
+
+# Backtotop
+
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
+<!-- The below content is automatically added from ./../docs/partials/description.md -->
+`<auro-backtotop>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing a quick and accessable means to jump back to the top of a long content page.
+
+The component will be hidden while the page Y scroll position is at the top. When scroll down begins the button will display in the bottom right corner of the page. While scrolling down the button will display only an arrow up icon. When scroll up occurs, the button will additionally display any slotted text content.
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/readmeAddlInfo.md) -->
+<!-- The below content is automatically added from ./../docs/partials/readmeAddlInfo.md -->
+<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## UI development browser support
 
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/browserSupport.md) -->
 For the most up to date information on [UI development browser support](https://auro.alaskaair.com/support/browsersSupport)
+
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
 
-[![Test and publish](https://github.com/AlaskaAirlines/auro-back-to-top/actions/workflows/testPublish.yml/badge.svg?branch=main)](https://github.com/AlaskaAirlines/auro-back-to-top/actions/workflows/testPublish.yml)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-back-to-top?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-back-to-top)
-[![License](https://img.shields.io/npm/l/@aurolabs/auro-back-to-top?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall.md) -->
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-backtotop/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-backtotop/actions/workflows/testPublish.yml)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-backtotop?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-backtotop)
+[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-backtotop?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurolabs/auro-back-to-top
+$ npm i @aurodesignsystem/auro-backtotop
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
 
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ### Design Token CSS Custom Property dependency
 
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/designTokens.md) -->
 The use of any Auro custom element has a dependency on the [Auro Design Tokens](https://auro.alaskaair.com/getting-started/developers/design-tokens).
+
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ### CSS Custom Property fallbacks
 
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/cssFallbacks.md) -->
 [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) are [not supported](https://auro.alaskaair.com/support/custom-properties) in older browsers. For this, fallback properties are pre-generated and included with the npm.
 
 Any update to the Auro Design Tokens will be immediately reflected with browsers that support CSS custom properties, legacy browsers will require updated components with pre-generated fallback properties.
 
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ### Define dependency in project component
 
-Defining the component dependency within each component that is using the `<auro-back-to-top>` component.
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImportDescription.md) -->
+Defining the component dependency within each component that is using the `<auro-backtotop>` component.
 
-```javascript
-import "@aurolabs/auro-back-to-top";
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImport.md) -->
+
+```js
+import "@aurodesignsystem/auro-backtotop";
 ```
 
+<!-- AURO-GENERATED-CONTENT:END -->
 **Reference component in HTML**
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-back-to-top></auro-back-to-top>
+<auro-backtotop>Back to top</auro-backtotop>
 ```
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install bundled assets from CDN
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-back-to-top__bundled.js` for modern browsers and `auro-back-to-top__bundled.es5.js` for legacy browsers (including IE11).
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/bundleInstallDescription.md) -->
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. See -- `auro-backtotop__bundled.js` for modern browsers. Legacy browsers such as IE11 are no longer supported.
 
-Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
+We recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle correctly. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag.
 
-**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
+<!-- AURO-GENERATED-CONTENT:END -->
+
+### Bundle example code
+
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/bundleUse.md) -->
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
-
-<script src="https://unpkg.com/@aurolabs/auro-back-to-top@latest/dist/auro-back-to-top__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@aurolabs/auro-back-to-top@latest/dist/auro-back-to-top__bundled.es5.js" nomodule></script>
+<!-- **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-backtotop@latest/dist/auro-backtotop__bundled.js" type="module"></script>
 ```
 
-## auro-back-to-top use cases
+<!-- AURO-GENERATED-CONTENT:END -->
 
-The `<auro-back-to-top>` element should be used in situations where users may:
+## auro-backtotop use cases
 
-* informational pages with many sections
-* pages with infinite scroll
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ./../docs/partials/useCases.md -->
+The `<auro-backtotop>` element should be used in situations where users may:
+
+* Pages with large ammounts of content where a shortcut to jump to the top of the page is appropriate.
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Code Examples
 
-Default (fixed positioning):
+### Default auro-backtotop
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-back-to-top focus-id="top"></auro-back-to-top>
+<auro-backtotop>Back to top</auro-backtotop>
 ```
-
-The most important--and required--attribute to this element is `focus-id`. This is the id of an focusable element at the top of the page. When the trigger button is clicked to go back to top, the element will shift focus to the target element and scroll to its top position. A useful way to think of this is a reverse of the "Skip to main" affordance.
-
-Anchors or buttons are examples of focusable elements, but more likely the target is a `<div>`, `<main>`, `<section>` or other non-focusable element. To these, you'll need to add the `tabindex` attribute with a value of -1. This will allow the element to receive focus so your user can resume tabbing from the top of the page, but it will keep the target element out of the default tab order so users don't stumble into it at the start of the page.
-
-```html
-<main id="top" tabindex="-1">
-    ...
-    <auro-back-to-top focus-id="top"></auro-back-to-top>
-</main>
-```
-
-Adjust how soon or delayed the button shows either by where you include the element in your document or with the `rootmargintop` property:
-
-```html
-<!-- delay showing the button until after user scrolls 3vh + 1vh (reference element out-of-screen) -->
-<auro-back-to-top focus-id="top" offset="3vh"></auro-back-to-top>
-```
-
-To display inline:
-
-```html
-<auro-back-to-top focus-id="top" inline></auro-back-to-top>
-```
-
-For i18n support:
-
-```html
-<auro-back-to-top focus-id="top">volver arriba</auro-back-to-top>
-```
-
-You can customize what renders in the button:
-
-```html
-<auro-back-to-top focus-id="top" inline>zoom zoom! 🚀</auro-back-to-top>
-```
-
-## Possible issues and workarounds
-
-Issues with `auro-back-to-top` element and its fixed-position button may trace back to stacking context. For a good time learning about how the browser decides where to position elements and stacking contexts, the [MDN documentation on `position`](https://developer.mozilla.org/en-US/docs/Web/CSS/position) is a great start.
-
-### **The button does not become visible at the expected scroll height**
-
-To know when to show and hide the fixed button, `auro-back-to-top` uses a reference element positioned absolutely to `top`. Placing the `auro-back-to-top` as the last content node in the `body` is encouraged. If not possible, look for parent nodes with `position` set other than the default, static. 
-
-### **The button scrolls _under_ elements on the page**
-
-The fixed button applies a high `z-index` to improve its odds of rendering above content but it can still lose. The suggestion above can help here, too: placing the `auro-back-to-top` as the last content node in the `body`. If not possible, inspect the `position` and `z-index` styles applied to elements it scrolls under, use negative z-index if necessary to allow the button to scroll over top.
-
-### Why is my page too tall?
-
-If you set a high offset, for example `offset="42vh"`, this will increase the total height of your content. Set `offset` value reasonably and check at different breakpoints so that it never calculates as taller than the content height.
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## Development
 
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/developmentDescription.md) -->
 In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
 
-Please be sure to review the [contribution guidelines](https://auro.alaskaair.com/getting-started/developers/contributing) for this project. Please make sure to **pay special attention** to the **conventional commits** section of the document.
+Please be sure to review the [contribution guidelines](https://auro.alaskaair.com/contributing) for this project. Please make sure to **pay special attention** to the **conventional commits** section of the document.
+
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ### Start development environment
 
-Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open two different shell sessions. One is for the **npm tasks**, the second is to run the **server**.
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/localhost.md) -->
+Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open a shell session to run the **dev server**.
 
 ```shell
-// shell terminal one
 $ npm run dev
-
-// shell terminal two
-$ npm run serve
 ```
 
 Open [localhost:8000](http://localhost:8000/)
 
+If running separate sessions is preferred, please run the following commands in individual terminal shells.
+
+```shell
+$ npm run build:watch
+
+$ npm run serve
+```
+
+<!-- AURO-GENERATED-CONTENT:END -->
+
+### API generation
+
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/api.md) -->
+The custom element API file is generated in the build and committed back to the repo with a version change. If the API doc has changed without a version change, author's are to run `npm run build:api` to generate the doc and commit to version control.
+
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ### Testing
-Automated tests are required for every Auro component. See `.\test\auro-back-to-top.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
-### Demo deployment
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/testing.md) -->
+Automated tests are required for every Auro component. See `.\test\auro-backtotop.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
-To deploy a demo version of the component for review, run `npm run demo:build` to create a `./build` directory that can be pushed to any static server.
+<!-- AURO-GENERATED-CONTENT:END -->
+
+### Bundled assets
+
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/bundles.md) -->
+Bundled assets are only generated in the remote and not merged back to this repo. To review and/or test a bundled asset locally, run `$ npm run bundler` to generate assets.
+
+<!-- AURO-GENERATED-CONTENT:END -->
