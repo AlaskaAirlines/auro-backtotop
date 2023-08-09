@@ -76,6 +76,11 @@ export class AuroBackToTop extends LitElement {
      * @private
      */
     this.interactionActive = false;
+
+    /**
+     * @private
+     */
+    this.yPosShowButton = 400;
   }
 
   static get styles() {
@@ -112,9 +117,7 @@ export class AuroBackToTop extends LitElement {
 
       this.lastKnownScrollPosition = window.scrollY;
 
-      const topOfPageYPos = 0;
-
-      if (this.lastKnownScrollPosition === topOfPageYPos) {
+      if (this.lastKnownScrollPosition < this.yPosShowButton) {
         this.hidden = true;
       } else {
         this.hidden = false;
