@@ -15,4 +15,57 @@ describe('auro-backtotop', () => {
 
     await expect(el).to.be.true;
   });
+  
+  it('tests scroll-related events', async () => {
+    window.innerHeight = 2500;
+    const el = await fixture(html`
+      <auro-backtotop cssclass="testClass"></auro-backtotop>
+    `);
+
+    simulateScroll(0, 500);
+    expect(el.hidden).to.be.false;
+
+    simulateScroll(0, 0);
+    expect(el.hidden).to.be.true;
+  });
+
+  it('tests click event', async () => {
+    const el = await fixture(html`
+      <auro-backtotop cssclass="testClass"></auro-backtotop>
+    `);
+    simulateScroll(0, 500);
+    el.shadowRoot.querySelector('auro-button').click();
+    expect(document.documentElement.scrollTop).to.equal(0);
+  });
+
+  it('tests mouse-related events', async () => {
+    const el = await fixture(html`
+      <auro-backtotop cssclass="testClass"></auro-backtotop>
+    `);
+
+    el.dispatchEvent(new Event('mouseover'));
+    expect(el.interactionActive).to.be.true;
+
+    el.dispatchEvent(new Event('mouseout'));
+    expect(el.interactionActive).to.be.false;
+  });
+
+  it('tests focus-related events', async () => {
+    const el = await fixture(html`
+      <auro-backtotop cssclass="testClass"></auro-backtotop>
+    `);
+    
+    el.dispatchEvent(new Event('focusin'));
+    expect(el.interactionActive).to.be.true;
+
+    el.dispatchEvent(new Event('focusout'));
+    expect(el.interactionActive).to.be.false;
+  });
+
+  function simulateScroll(x, y) {
+    const scrollEvent = new CustomEvent('scroll', { detail: { x, y } });
+    window.scrollX = x;
+    window.scrollY = y;
+    document.dispatchEvent(scrollEvent);
+  }
 });
