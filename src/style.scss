@@ -1,10 +1,13 @@
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
+// Support for fallback values
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
+
 :host {
     position: fixed;
-    right: var(--auro-size-300);
-    bottom: var(--auro-size-300);
+    right: var(--ds-size-300, $ds-size-300);
+    bottom: var(--ds-size-300, $ds-size-300);
 }
 
 :host([hidden]) {
@@ -12,7 +15,7 @@
 }
 
 auro-button {
-  box-shadow: var(--auro-elevation-300);
+  box-shadow: var(--ds-elevation-300, $ds-elevation-300);
 
   &::part(button) {
     transition-property: opacity;
