@@ -1,6 +1,6 @@
 # auro-backtotop
 
-auro-backtotop provides helps users quickly return to page top.
+auro-backtotop provides users a way to quickly return to page top.
 
 ## Properties
 
