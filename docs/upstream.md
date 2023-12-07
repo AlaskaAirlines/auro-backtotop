@@ -6,7 +6,7 @@ So you forked this repo. That's awesome. But don't forget you keep your `main` b
 
 With a locally cloned repository, you can do this with git with your CLI as follows.
 
-#### Add upstream
+### Add upstream
 
 First you want to verify your current remote config settings.
 

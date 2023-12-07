@@ -3,7 +3,7 @@
 
 # auro-backtotop
 
-auro-backtotop provides helps users quickly return to page top.
+auro-backtotop provides users a way to quickly return to page top.
 
 ## Properties
 
@@ -30,23 +30,21 @@ auro-backtotop provides helps users quickly return to page top.
 
 ### Basic
 
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-      <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-      <auro-backtotop>Back to top</auro-backtotop>
-      <!-- AURO-GENERATED-CONTENT:END -->
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
-      <!-- The below content is automatically added from ./../../apiExamples/basicButtonOnly.html -->
-      <auro-button
-        aria-label="arrow-up"
-        rounded>
-        Back to top
-        <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
-      </auro-button>
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <auro-backtotop>Back to top</auro-backtotop>
+  <!-- AURO-GENERATED-CONTENT:END -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/basicButtonOnly.html -->
+  <auro-button
+    aria-label="arrow-up"
+    rounded>
+    Back to top
+    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+  </auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->

@@ -10,7 +10,7 @@ import '@aurodesignsystem/auro-icon';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-backtotop provides helps users quickly return to page top.
+ * auro-backtotop provides users a way to quickly return to page top.
  *
  * @attr {Boolean} disabled - Render the trigger inline, will always be visible
  * @attr {Boolean} secondary - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
