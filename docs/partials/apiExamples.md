@@ -11,7 +11,7 @@
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
@@ -29,7 +29,7 @@ This example demonstrates auro-backtotop in it's disabled state.
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledButtonOnly.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
@@ -46,7 +46,7 @@ The `secondary` attribute will make the Back to Top button use the `secondary` s
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/secondary.html) -->
@@ -64,7 +64,7 @@ The default slot defines the content of the button.
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
