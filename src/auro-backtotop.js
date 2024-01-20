@@ -10,9 +10,9 @@ import '@aurodesignsystem/auro-icon';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-backtotop provides users a way to quickly return to page top.
+ * The auro-backtotop element provides users a way to quickly return to page top.
  *
- * @attr {Boolean} disabled - Render the trigger inline, will always be visible
+ * @attr {Boolean} disabled - Render the trigger inline, will always be visible SEE MEE!!!
  * @attr {Boolean} secondary - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
  * @slot - Default slot for the text of the button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -89,7 +89,6 @@ export class AuroBackToTop extends LitElement {
 
   /**
    * @private
-   * Scroll up to the target focus element
    * @returns {void}
    */
   scrollTop() {
@@ -98,7 +97,6 @@ export class AuroBackToTop extends LitElement {
 
   /**
    * @private
-   * Handle trigger click by scrolling to window top and setting focus
    * @returns {void}
    */
   onTriggerClick() {
