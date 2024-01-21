@@ -12,7 +12,7 @@ import '@aurodesignsystem/auro-icon';
 /**
  * The auro-backtotop element provides users a way to quickly return to page top.
  *
- * @attr {Boolean} disabled - Render the trigger inline, will always be visible SEE MEE!!!
+ * @attr {Boolean} disabled - Render the trigger inline, will always be visible
  * @attr {Boolean} secondary - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
  * @slot - Default slot for the text of the button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -154,7 +154,7 @@ export class AuroBackToTop extends LitElement {
         @click=${this.onTriggerClick}
         tabindex="-1">
         <slot></slot>
-        <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+        <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
       </auro-button>
     `;
   }
