@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.0.1...v2.1.0) (2024-01-21)
+
+
+### Bug Fixes
+
+* **icon:** fix icon that wont render ([b8b066f](https://github.com/AlaskaAirlines/auro-backtotop/commit/b8b066ff622a3e811f15cb544b2ea59b443819d4))
+
+
+### Features
+
+* add suport for SSR projects ([ff79d24](https://github.com/AlaskaAirlines/auro-backtotop/commit/ff79d2499bb1e42d546b3981e3c7375ee86aca5d))
+
 ## [2.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.0.0...v2.0.1) (2023-11-02)
 
 
