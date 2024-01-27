@@ -1,4 +1,4 @@
-import { AuroBackToTop } from './src/auro-backtotop';
+import { AuroBackToTop } from './src/auro-backtotop.js';
 
 /**
  * Register Custom Element.
