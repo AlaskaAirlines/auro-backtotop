@@ -9,7 +9,7 @@ The auro-backtotop element provides users a way to quickly return to page top.
 
 | Property    | Attribute   | Type      | Default | Description                                      |
 |-------------|-------------|-----------|---------|--------------------------------------------------|
-| [disabled](#disabled)  | `disabled`  | `Boolean` | false   | Render the trigger inline, will always be visible SEE MEE!!! |
+| [disabled](#disabled)  | `disabled`  | `Boolean` | false   | Render the trigger inline, will always be visible |
 | [secondary](#secondary) | `secondary` | `Boolean` | false   | Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended) |
 
 ## Slots
