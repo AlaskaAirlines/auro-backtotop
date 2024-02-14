@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.1.6](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.5...v2.1.6) (2024-02-14)
+
+
+### Performance Improvements
+
+* **deps:** update dependencies ([c68bd52](https://github.com/AlaskaAirlines/auro-backtotop/commit/c68bd52df52eb5cc469092a726e92dcb48e7fbde))
+
 ## [2.1.5](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.4...v2.1.5) (2024-02-13)
 
 
