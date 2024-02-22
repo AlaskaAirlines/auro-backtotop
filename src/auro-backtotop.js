@@ -139,6 +139,10 @@ export class AuroBackToTop extends LitElement {
     this.addEventListener('focusout', () => {
       this.interactionActive = false;
     });
+
+    this.addEventListener('touchend', () => {
+      this.onTriggerClick();
+    });
   }
 
   // function that renders the HTML and CSS into  the scope of the component

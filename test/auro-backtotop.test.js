@@ -11,7 +11,7 @@ describe('auro-backtotop', () => {
   });
 
   it('auro-backtotop custom element is defined', async () => {
-    const el = await !!customElements.get("auro-backtotop");
+    const el = await Boolean(customElements.get("auro-backtotop"));
 
     await expect(el).to.be.true;
   });
@@ -60,6 +60,14 @@ describe('auro-backtotop', () => {
 
     el.dispatchEvent(new Event('focusout'));
     expect(el.interactionActive).to.be.false;
+  });
+
+  it('auro-backtotop event triggering event click', async () => {
+    const el = await fixture(html`
+      <auro-backtotop cssclass="testClass"></auro-backtotop>
+    `);
+    el.shadowRoot.querySelector('auro-button').click()
+    el.shadowRoot.querySelector('auro-button').dispatchEvent(new Event('mouseover'));
   });
 
   function simulateScroll(x, y) {
