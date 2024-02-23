@@ -31,7 +31,7 @@ The `<auro-backtotop>` element should be used in situations where users may:
     aria-label="arrow-up"
     rounded>
     Back to top
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+    <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
