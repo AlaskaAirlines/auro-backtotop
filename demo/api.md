@@ -41,7 +41,7 @@ The auro-backtotop element provides users a way to quickly return to page top.
     aria-label="arrow-up"
     rounded>
     Back to top
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+    <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -70,7 +70,7 @@ This example demonstrates auro-backtotop in it's disabled state.
     disabled
     rounded>
     Back to top
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+    <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -97,7 +97,7 @@ The `secondary` attribute will make the Back to Top button use the `secondary` s
     secondary
     rounded>
     Back to top
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+    <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -125,7 +125,7 @@ The default slot defines the content of the button.
     aria-label="arrow-up"
     rounded>
     Back to top
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+    <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
