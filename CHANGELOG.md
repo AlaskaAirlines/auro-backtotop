@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.1.8](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.7...v2.1.8) (2024-02-29)
+
+
+### Bug Fixes
+
+* issue tap/click events should be mobile-aware ([6553683](https://github.com/AlaskaAirlines/auro-backtotop/commit/65536833e7d9f1ff6460d92bdab13fff6f9c789a))
+
 ## [2.1.7](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.6...v2.1.7) (2024-02-23)
 
 
