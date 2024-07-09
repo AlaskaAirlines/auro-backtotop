@@ -34,7 +34,7 @@ describe('auro-backtotop', () => {
       <auro-backtotop cssclass="testClass"></auro-backtotop>
     `);
     simulateScroll(0, 500);
-    el.shadowRoot.querySelector('auro-button').click();
+    el.shadowRoot.querySelector('[part=button]').click();
     expect(document.documentElement.scrollTop).to.equal(0);
   });
 
@@ -66,8 +66,8 @@ describe('auro-backtotop', () => {
     const el = await fixture(html`
       <auro-backtotop cssclass="testClass"></auro-backtotop>
     `);
-    el.shadowRoot.querySelector('auro-button').click()
-    el.shadowRoot.querySelector('auro-button').dispatchEvent(new Event('mouseover'));
+    el.shadowRoot.querySelector('[part=button]').click()
+    el.shadowRoot.querySelector('[part=button]').dispatchEvent(new Event('mouseover'));
   });
 
   function simulateScroll(x, y) {
