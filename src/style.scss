@@ -14,16 +14,21 @@
   display: none;
 }
 
-auro-button {
+[part="button"] { // This is the auro-button itself
   box-shadow: var(--ds-elevation-300, $ds-elevation-300);
 
-  &::part(button) {
+  &::part(button) { // This is the html button inside the auro-button
     transition-property: opacity;
   }
 
   &:not([iconOnly]) {
-    &::part(button) {
+    &::part(button) { // This is the html button inside the auro-button
       padding-right: 11px;
     }
   }
+}
+
+[auro-icon] {
+  width: var(--ds-size-300, $ds-size-300);
+  height: var(--ds-size-300, $ds-size-300);
 }

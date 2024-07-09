@@ -1,12 +1,20 @@
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
+/* eslint-disable lit/binding-positions, lit/no-invalid-html */
+
 // ---------------------------------------------------------------------
-import { LitElement, html } from "lit";
+import { LitElement } from "lit";
+import { html } from 'lit/static-html.js';
 import styleCss from "./style-css.js";
 
-import '@aurodesignsystem/auro-button';
-import '@aurodesignsystem/auro-icon';
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+
+import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
+import iconVersion from './iconVersion';
+
+import { AuroButton } from '@aurodesignsystem/auro-button/src/auro-button.js';
+import buttonVersion from './buttonVersion';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -48,6 +56,19 @@ export class AuroBackToTop extends LitElement {
 
   constructor() {
     super();
+
+    const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
+    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+
+    /**
+     * @private
+     */
+    this.buttonTag = versioning.generateTag('auro-button', buttonVersion, AuroButton);
+
 
     this.disabled = false;
     this.secondary = false;
@@ -148,7 +169,7 @@ export class AuroBackToTop extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-      <auro-button
+      <${this.buttonTag}
         aria-label="arrow-up"
         rounded
         .disabled="${this.disabled}"
@@ -158,8 +179,8 @@ export class AuroBackToTop extends LitElement {
         @click=${this.onTriggerClick}
         tabindex="-1">
         <slot></slot>
-        <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
-      </auro-button>
+        <${this.iconTag} customColor category="interface" name="arrow-up" slot="icon" part="icon"></${this.iconTag}>
+      </${this.buttonTag}>
     `;
   }
 }
