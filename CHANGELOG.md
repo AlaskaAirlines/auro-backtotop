@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.8...v3.0.0) (2024-10-04)
+
+
+### Performance Improvements
+
+* address backlog of tech-debt ([a8be565](https://github.com/AlaskaAirlines/auro-backtotop/commit/a8be565c48aeb1319e6ef3ad13d2ffa0c2098979))
+* **tags:** use custom element dependency versioning ([236fc44](https://github.com/AlaskaAirlines/auro-backtotop/commit/236fc44134d83d813e09d17619aa234dd9f240c0))
+* update to latest dependencies and linting ([24e9827](https://github.com/AlaskaAirlines/auro-backtotop/commit/24e9827d31dfd1f3abb8476f3c7eb235a03ddea3))
+
+
+### BREAKING CHANGES
+
+* Trigger major release for theme support
+
 ## [2.1.8](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.7...v2.1.8) (2024-02-29)
 
 
