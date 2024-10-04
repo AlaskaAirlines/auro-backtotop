@@ -10,6 +10,8 @@ import styleCss from "./style-css.js";
 
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion';
 
@@ -102,6 +104,11 @@ export class AuroBackToTop extends LitElement {
      * @private
      */
     this.yPosShowButton = 400;
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   static get styles() {
@@ -126,6 +133,9 @@ export class AuroBackToTop extends LitElement {
   }
 
   firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-backtotop');
+
     // hide/show the button and it's text based on scroll position
     document.addEventListener("scroll", () => {
       if (window.scrollY < this.lastKnownScrollPosition) {
