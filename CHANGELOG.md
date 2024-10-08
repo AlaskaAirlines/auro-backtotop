@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.0.0...v3.0.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* moves auro library to dependencies in package.json [#41](https://github.com/AlaskaAirlines/auro-backtotop/issues/41) ([0fa0810](https://github.com/AlaskaAirlines/auro-backtotop/commit/0fa081040480bbf92a879c5223fe90512bdf5bf3))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v2.1.8...v3.0.0) (2024-10-04)
 
 
