@@ -13,10 +13,10 @@ import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
-import iconVersion from './iconVersion';
+import iconVersion from './iconVersion.js';
 
 import { AuroButton } from '@aurodesignsystem/auro-button/src/auro-button.js';
-import buttonVersion from './buttonVersion';
+import buttonVersion from './buttonVersion.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
