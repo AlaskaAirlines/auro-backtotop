@@ -116,6 +116,18 @@ export class AuroBackToTop extends LitElement {
   }
 
   /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-backtotop"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroBackToTop.register("custom-backtotop") // this will register this element to <custom-backtotop/>
+   *
+   */
+  static register(name = "auro-backtotop") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroBackToTop);
+  }
+
+  /**
    * @private
    * @returns {void}
    */
@@ -193,9 +205,4 @@ export class AuroBackToTop extends LitElement {
       </${this.buttonTag}>
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-backtotop")) {
-  customElements.define("auro-backtotop", AuroBackToTop);
 }
