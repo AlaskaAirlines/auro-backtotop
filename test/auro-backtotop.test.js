@@ -1,5 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/auro-backtotop';
+import '../index';
 
 describe('auro-backtotop', () => {
   it('auro-backtotop is accessible', async () => {
