@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.0.1...v3.1.0) (2024-10-24)
+
+
+### Bug Fixes
+
+* add missing file extension that breaks ESM support ([7ac9889](https://github.com/AlaskaAirlines/auro-backtotop/commit/7ac9889493e59addcdfdacff6d510f3fa62e83c3))
+
+
+### Features
+
+* **api:** add register static method [#43](https://github.com/AlaskaAirlines/auro-backtotop/issues/43) ([9e013ea](https://github.com/AlaskaAirlines/auro-backtotop/commit/9e013eab5f417a03fc4b7cfcde36407f4e394d8b))
+
+
+### Performance Improvements
+
+* update dependency versions ([0177f28](https://github.com/AlaskaAirlines/auro-backtotop/commit/0177f28113be8110893ac9eb716d07c72963b250))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.0.0...v3.0.1) (2024-10-08)
 
 
