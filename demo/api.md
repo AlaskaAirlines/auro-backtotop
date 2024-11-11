@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
+<!-- The below content is automatically added from ../docs/api.md -->
 
 # auro-backtotop
 
@@ -31,12 +31,12 @@ The auro-backtotop element provides users a way to quickly return to page top.
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-backtotop>Back to top</auro-backtotop>
   <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basicButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basicButtonOnly.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basicButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
     rounded>
@@ -47,8 +47,8 @@ The auro-backtotop element provides users a way to quickly return to page top.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-backtotop>Back to top</auro-backtotop>
@@ -63,8 +63,8 @@ The auro-backtotop element provides users a way to quickly return to page top.
 This example demonstrates auro-backtotop in it's disabled state.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledButtonOnly.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/disabledButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/disabledButtonOnly.html) -->
+  <!-- The below content is automatically added from ../apiExamples/disabledButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
     disabled
@@ -76,8 +76,8 @@ This example demonstrates auro-backtotop in it's disabled state.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/disabled.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/disabled.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/disabled.html -->
 
 ```html
 <auro-backtotop disabled>Back to top</auro-backtotop>
@@ -90,8 +90,8 @@ This example demonstrates auro-backtotop in it's disabled state.
 The `secondary` attribute will make the Back to Top button use the `secondary` style.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/secondaryButtonOnly.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/secondaryButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/secondaryButtonOnly.html) -->
+  <!-- The below content is automatically added from ../apiExamples/secondaryButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
     secondary
@@ -103,8 +103,8 @@ The `secondary` attribute will make the Back to Top button use the `secondary` s
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/secondary.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/secondary.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/secondary.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/secondary.html -->
 
 ```html
 <auro-backtotop secondary>Back to top</auro-backtotop>
@@ -119,8 +119,8 @@ The `secondary` attribute will make the Back to Top button use the `secondary` s
 The default slot defines the content of the button.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basicButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basicButtonOnly.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basicButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
     rounded>
@@ -131,8 +131,8 @@ The default slot defines the content of the button.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-backtotop>Back to top</auro-backtotop>
@@ -142,8 +142,8 @@ The default slot defines the content of the button.
 
 ## Page Content For Demo
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/pageContent.html) -->
-<!-- The below content is automatically added from ./../../apiExamples/pageContent.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/pageContent.html) -->
+<!-- The below content is automatically added from ../apiExamples/pageContent.html -->
 <p>
   This component requires page content that is taller than the window. Below is `lorem ipsum` content to force a large document. A `back to top` button will appear when you begin to scroll down the page.
 </p>
