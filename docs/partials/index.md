@@ -6,34 +6,34 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Backtotop
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-backtotop use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Example(s)
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basicButtonOnly.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basicButtonOnly.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
 ## Page Content For Demo
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/pageContent.html) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/pageContent.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Recommended Use and Version Control
