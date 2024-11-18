@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [3.1.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.1.0...v3.1.1) (2024-11-18)
+
+
+### Bug Fixes
+
+* update markdown partial pathing to consume new auro lib [#45](https://github.com/AlaskaAirlines/auro-backtotop/issues/45) ([abf53de](https://github.com/AlaskaAirlines/auro-backtotop/commit/abf53dec09a1530d11eb06feaa6c4c4da01f8f43))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([b880b79](https://github.com/AlaskaAirlines/auro-backtotop/commit/b880b79c650c39336fb8a35bfac94b4a63c0a099))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.0.1...v3.1.0) (2024-10-24)
 
 
