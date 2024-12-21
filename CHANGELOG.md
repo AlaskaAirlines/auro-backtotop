@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.2](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.1.1...v3.1.2) (2024-12-21)
+
+
+### Performance Improvements
+
+* update node to version 22 ([8ca2010](https://github.com/AlaskaAirlines/auro-backtotop/commit/8ca2010fe4438782343983c4d3a3cc9ac0546c34))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.1.0...v3.1.1) (2024-11-18)
 
 
