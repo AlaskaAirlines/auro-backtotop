@@ -23,7 +23,7 @@
 
 #### disabled
 
-This example demonstrates auro-backtotop in it's disabled state.
+This example demonstrates auro-backtotop in its disabled state.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/disabledButtonOnly.html) -->
