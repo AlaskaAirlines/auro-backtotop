@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.0...v4.0.1) (2025-04-15)
+
+
+### Performance Improvements
+
+* add wca script for docs api ([f199f94](https://github.com/AlaskaAirlines/auro-backtotop/commit/f199f9409e182b7452c255b79edcf2866c27a354))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v3.1.3...v4.0.0) (2025-02-28)
 
 
