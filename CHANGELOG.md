@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.2](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.1...v4.0.2) (2025-04-30)
+
+
+### Performance Improvements
+
+* update to use new color theming tokens [#53](https://github.com/AlaskaAirlines/auro-backtotop/issues/53) ([9cb1cea](https://github.com/AlaskaAirlines/auro-backtotop/commit/9cb1cead7f43d0ebd21cb28ed7325fb7d51b2cd9))
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.0...v4.0.1) (2025-04-15)
 
 
