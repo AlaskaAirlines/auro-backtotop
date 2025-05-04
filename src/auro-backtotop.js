@@ -41,7 +41,8 @@ export class AuroBackToTop extends LitElement {
         reflect: true
       },
       iconOnly: {
-        type: Boolean
+        type: Boolean,
+        reflect: true
       },
       interactionActive: {
         type: Boolean
