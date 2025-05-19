@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.3](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.2...v4.0.3) (2025-05-19)
+
+
+### Bug Fixes
+
+* add reflect true to add modern framework support ([e32d457](https://github.com/AlaskaAirlines/auro-backtotop/commit/e32d457aacde1b862f6445a3c1c0413ee0421579)), closes [#539](https://github.com/AlaskaAirlines/auro-backtotop/issues/539)
+
 ## [4.0.2](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.1...v4.0.2) (2025-04-30)
 
 
