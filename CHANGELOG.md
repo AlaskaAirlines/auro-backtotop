@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.3...v4.1.0) (2025-07-02)
+
+
+### Bug Fixes
+
+* update docs head content ([c688e1b](https://github.com/AlaskaAirlines/auro-backtotop/commit/c688e1b86d6627bdefb4aaf3852b9ee9dbb16f0a))
+
+
+### Features
+
+* add themeable type classes ([97c52fb](https://github.com/AlaskaAirlines/auro-backtotop/commit/97c52fb34b3824422eb8804df31ed37664969247))
+
 ## [4.0.3](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.2...v4.0.3) (2025-05-19)
 
 
