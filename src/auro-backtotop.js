@@ -25,6 +25,7 @@ import buttonVersion from './buttonVersion.js';
  * @attr {Boolean} disabled - Render the trigger inline, will always be visible
  * @attr {Boolean} secondary - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
  * @slot - Default slot for the text of the button.
+ * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart icon - Apply CSS to arrow up icon.
  */
@@ -192,8 +193,11 @@ export class AuroBackToTop extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
+      <!-- Hidden slot for aria-label -->
+      <slot name="ariaLabel" hidden></slot>
+
       <${this.buttonTag}
-        aria-label="arrow-up"
+        aria-label="${this.runtimeUtils.getSlotText(this, 'ariaLabel') || 'arrow-up'}"
         rounded
         .disabled="${this.disabled}"
         .secondary="${this.secondary}"
