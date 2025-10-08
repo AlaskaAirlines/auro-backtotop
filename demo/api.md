@@ -140,6 +140,35 @@ The default slot defines the content of the button.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
+#### ariaLabel
+
+The `ariaLabel` slot allows you to pass an aria-label to the HTML5 button. The default value is `"arrow-up"`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ariaLabelButtonOnly.html) -->
+  <!-- The below content is automatically added from ../apiExamples/ariaLabelButtonOnly.html -->
+  <auro-button
+    aria-label="Custom aria-label goes here!"
+    rounded>
+    Back to top
+    <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
+  </auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ariaLabel.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/ariaLabel.html -->
+
+```html
+<auro-backtotop>
+  <span slot="ariaLabel">Custom aria-label goes here!</span>
+  Back to top
+</auro-backtotop>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ## Page Content For Demo
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/pageContent.html) -->
