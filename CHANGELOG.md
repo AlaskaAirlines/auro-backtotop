@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.2.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.1.0...v4.2.0) (2025-10-14)
+
+
+### Features
+
+* add slot for aria-label [#61](https://github.com/AlaskaAirlines/auro-backtotop/issues/61) ([20cc083](https://github.com/AlaskaAirlines/auro-backtotop/commit/20cc083d6e73b2928bc435cd462a9b0c77cba9a9))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-backtotop/compare/v4.0.3...v4.1.0) (2025-07-02)
 
 

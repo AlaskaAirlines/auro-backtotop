@@ -11,9 +11,10 @@ The auro-backtotop element provides users a way to quickly return to page top.
 
 ## Slots
 
-| Name | Description                              |
-|------|------------------------------------------|
-|      | Default slot for the text of the button. |
+| Name        | Description                                      |
+|-------------|--------------------------------------------------|
+|             | Default slot for the text of the button.         |
+| `ariaLabel` | Use this slot to pass an aria-label to the HTML5 button. |
 
 ## CSS Shadow Parts
 
