@@ -12,18 +12,18 @@ import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
-import iconVersion from './iconVersion.js';
+import { AuroIcon } from '@aurodesignsystem/auro-icon/class';
+import iconVersion from './iconVersion';
 
-import { AuroButton } from '@aurodesignsystem/auro-button/src/auro-button.js';
-import buttonVersion from './buttonVersion.js';
+import { AuroButton } from '@aurodesignsystem/auro-button/class';
+import buttonVersion from './buttonVersion';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-backtotop element provides users a way to quickly return to page top.
  *
- * @attr {Boolean} disabled - Render the trigger inline, will always be visible
- * @attr {Boolean} secondary - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
+ * @attr {Boolean} disabled - Render the trigger inline, will always be visible.
+ * @attr {Boolean} variant - Allows for the primary and secondary button styles.
  * @slot - Default slot for the text of the button.
  * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -51,8 +51,8 @@ export class AuroBackToTop extends LitElement {
       lastScrollDirectionUp: {
         type: Boolean
       },
-      secondary: {
-        type: Boolean,
+      variant: {
+        type: true,
         reflect: true
       }
     };
@@ -63,6 +63,9 @@ export class AuroBackToTop extends LitElement {
 
     const versioning = new AuroDependencyVersioning();
 
+    this.disabled = false;
+    this.variant = 'primary';
+
     /**
      * @private
      */
@@ -71,11 +74,18 @@ export class AuroBackToTop extends LitElement {
     /**
      * @private
      */
-    this.buttonTag = versioning.generateTag('auro-button', buttonVersion, AuroButton);
+    this.buttonTag = versioning.generateTag('auro-backtotop-button', buttonVersion, AuroButton);
 
 
-    this.disabled = false;
-    this.secondary = false;
+    /**
+     * @private
+     */
+    this.shape = 'circle';
+
+    /**
+     * @private
+     */
+    this.size = 'lg';
 
     /**
      * @private
@@ -169,10 +179,12 @@ export class AuroBackToTop extends LitElement {
 
     // hide/show the button text based on mouse and keyboard interaction
     this.addEventListener('mouseover', () => {
+      this.shape = 'pill';
       this.interactionActive = true;
     });
 
     this.addEventListener('mouseout', () => {
+      this.shape = 'circle';
       this.interactionActive = false;
     });
 
@@ -200,13 +212,17 @@ export class AuroBackToTop extends LitElement {
         aria-label="${this.runtimeUtils.getSlotText(this, 'ariaLabel') || 'arrow-up'}"
         rounded
         .disabled="${this.disabled}"
-        .secondary="${this.secondary}"
+        variant="${this.variant}"
         ?iconOnly=${!this.lastScrollDirectionUp && !this.interactionActive}
         part="button"
+        shape="${this.shape}"
+        size="${this.size}"
         @click=${this.onTriggerClick}
         tabindex="-1">
-        <slot></slot>
-        <${this.iconTag} customColor category="interface" name="arrow-up" slot="icon" part="icon"></${this.iconTag}>
+        <span class="text" part="text">
+          <slot></slot>
+        </span>
+        <${this.iconTag} customColor category="interface" name="arrow-up" part="icon"></${this.iconTag}>
       </${this.buttonTag}>
     `;
   }
