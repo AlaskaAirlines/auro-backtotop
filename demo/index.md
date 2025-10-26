@@ -6,8 +6,12 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Backtotop
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
-<!-- The below content is automatically added from ../docs/partials/description.md -->
+<auro-icon-9_1_0 customColor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon-9_1_0>
+<br /><br /><br />
+After icon
+
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
+<!-- The below content is automatically added from ./../docs/partials/description.md -->
 `<auro-backtotop>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing a quick and accessible means to jump back to the top of a long content page.
 
 The component will be hidden while the page Y scroll position is at the top. When scroll down begins the button will display in the bottom right corner of the page. While scrolling down the button will display only an arrow up icon. When scroll up occurs, the button will additionally display any slotted text content.
@@ -15,8 +19,8 @@ The component will be hidden while the page Y scroll position is at the top. Whe
 
 ## auro-backtotop use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
-<!-- The below content is automatically added from ../docs/partials/useCases.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ./../docs/partials/useCases.md -->
 The `<auro-backtotop>` element should be used in situations where users may:
 
 * Pages with large amounts of content where a shortcut to jump to the top of the page is appropriate.
@@ -25,24 +29,25 @@ The `<auro-backtotop>` element should be used in situations where users may:
 ## Example(s)
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basicButtonOnly.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basicButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basicButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basicButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
-    rounded>
+    shape="pill"
+    size="lg">
     Back to top
     <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-backtotop>Back to top</auro-backtotop>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-backtotop>Back to top</auro-backtotop>
@@ -52,8 +57,8 @@ The `<auro-backtotop>` element should be used in situations where users may:
 
 ## Page Content For Demo
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/pageContent.html) -->
-<!-- The below content is automatically added from ../apiExamples/pageContent.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pageContent.html) -->
+<!-- The below content is automatically added from ./../apiExamples/pageContent.html -->
 <p>
   This component requires page content that is taller than the window. Below is `lorem ipsum` content to force a large document. A `back to top` button will appear when you begin to scroll down the page.
 </p>
