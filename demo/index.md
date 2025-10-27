@@ -83,7 +83,7 @@ There are two important parts of every Auro component. The <a href="https://deve
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `AuroBackToTop.register(name)` method and pass in a unique name.
 
 ```js
-import { AuroBackToTop } from './src/auro-backtotop.js';
+import { AuroBackToTop } from '@aurodesignsystem/auro-backtotop/class';
 
 AuroBackToTop.register('custom-backtotop');
 ```

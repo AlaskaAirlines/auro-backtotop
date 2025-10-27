@@ -1,8 +1,6 @@
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
-/* eslint-disable lit/binding-positions, lit/no-invalid-html */
-
 import { AuroButton } from "@aurodesignsystem/auro-button/class";
 import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
@@ -12,49 +10,26 @@ import { LitElement } from "lit";
 import { html } from "lit/static-html.js";
 import buttonVersion from "./buttonVersion";
 import iconVersion from "./iconVersion";
-import styleCss from "./style-css.js";
+import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-backtotop element provides users a way to quickly return to page top.
  *
- * @attr {Boolean} disabled - Render the trigger inline, will always be visible.
- * @attr {Boolean} variant - Allows for the primary and secondary button styles.
  * @slot - Default slot for the text of the button.
  * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart icon - Apply CSS to arrow up icon.
  */
 export class AuroBackToTop extends LitElement {
-  static get properties() {
-    return {
-      disabled: {
-        type: Boolean,
-        reflect: true,
-      },
-      hidden: {
-        type: Boolean,
-        reflect: true,
-      },
-      iconOnly: {
-        type: Boolean,
-        reflect: true,
-      },
-      interactionActive: {
-        type: Boolean,
-      },
-      lastScrollDirectionUp: {
-        type: Boolean,
-      },
-      variant: {
-        type: true,
-        reflect: true,
-      },
-    };
+
+    constructor() {
+    super();
+
+    this.initializeProperties();
   }
 
-  constructor() {
-    super();
+  initializeProperties() {
 
     const versioning = new AuroDependencyVersioning();
 
@@ -121,6 +96,44 @@ export class AuroBackToTop extends LitElement {
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
+  static get properties() {
+    return {
+
+      /**
+       * Render the trigger inline, will always be visible.
+       */
+      disabled: {
+        type: Boolean,
+        reflect: true,
+      },
+      hidden: {
+        type: Boolean,
+        reflect: true,
+      },
+      iconOnly: {
+        type: Boolean,
+        reflect: true,
+      },
+      interactionActive: {
+        type: Boolean,
+      },
+      lastScrollDirectionUp: {
+        type: Boolean,
+      },
+
+      /**
+       * The variant attribute allows for rendering the button using the primary (default) or secondary styles.
+       * @type { 'primary' | 'secondary' | String }
+       * @default "primary"
+       */
+      variant: {
+        type: String,
+        reflect: true,
+      },
+    };
+  }
+
+
   static get styles() {
     return [styleCss];
   }
@@ -153,6 +166,8 @@ export class AuroBackToTop extends LitElement {
     this.scrollTop();
     this.interactionActive = false;
   }
+
+  
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
