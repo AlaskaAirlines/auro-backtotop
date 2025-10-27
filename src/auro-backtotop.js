@@ -3,20 +3,16 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
+import { AuroButton } from "@aurodesignsystem/auro-button/class";
+import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // ---------------------------------------------------------------------
 import { LitElement } from "lit";
-import { html } from 'lit/static-html.js';
+import { html } from "lit/static-html.js";
+import buttonVersion from "./buttonVersion";
+import iconVersion from "./iconVersion";
 import styleCss from "./style-css.js";
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import { AuroIcon } from '@aurodesignsystem/auro-icon/class';
-import iconVersion from './iconVersion';
-
-import { AuroButton } from '@aurodesignsystem/auro-button/class';
-import buttonVersion from './buttonVersion';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -30,31 +26,30 @@ import buttonVersion from './buttonVersion';
  * @csspart icon - Apply CSS to arrow up icon.
  */
 export class AuroBackToTop extends LitElement {
-
   static get properties() {
     return {
       disabled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       hidden: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       iconOnly: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       interactionActive: {
-        type: Boolean
+        type: Boolean,
       },
       lastScrollDirectionUp: {
-        type: Boolean
+        type: Boolean,
       },
       variant: {
         type: true,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -64,28 +59,31 @@ export class AuroBackToTop extends LitElement {
     const versioning = new AuroDependencyVersioning();
 
     this.disabled = false;
-    this.variant = 'primary';
+    this.variant = "primary";
 
     /**
      * @private
      */
-    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+    this.iconTag = versioning.generateTag("auro-icon", iconVersion, AuroIcon);
 
     /**
      * @private
      */
-    this.buttonTag = versioning.generateTag('auro-backtotop-button', buttonVersion, AuroButton);
-
-
-    /**
-     * @private
-     */
-    this.shape = 'circle';
+    this.buttonTag = versioning.generateTag(
+      "auro-backtotop-button",
+      buttonVersion,
+      AuroButton,
+    );
 
     /**
      * @private
      */
-    this.size = 'lg';
+    this.shape = "circle";
+
+    /**
+     * @private
+     */
+    this.size = "lg";
 
     /**
      * @private
@@ -158,7 +156,7 @@ export class AuroBackToTop extends LitElement {
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-backtotop');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-backtotop");
 
     // hide/show the button and it's text based on scroll position
     document.addEventListener("scroll", () => {
@@ -178,26 +176,26 @@ export class AuroBackToTop extends LitElement {
     });
 
     // hide/show the button text based on mouse and keyboard interaction
-    this.addEventListener('mouseover', () => {
-      this.shape = 'pill';
+    this.addEventListener("mouseover", () => {
+      this.shape = "pill";
       this.interactionActive = true;
     });
 
-    this.addEventListener('mouseout', () => {
-      this.shape = 'circle';
+    this.addEventListener("mouseout", () => {
+      this.shape = "circle";
       this.interactionActive = false;
     });
 
     // The focusin and focusout events are to simulate toggling text for keyboard users
-    this.addEventListener('focusin', () => {
+    this.addEventListener("focusin", () => {
       this.interactionActive = true;
     });
 
-    this.addEventListener('focusout', () => {
+    this.addEventListener("focusout", () => {
       this.interactionActive = false;
     });
 
-    this.addEventListener('touchend', () => {
+    this.addEventListener("touchend", () => {
       this.onTriggerClick();
     });
   }
@@ -209,7 +207,7 @@ export class AuroBackToTop extends LitElement {
       <slot name="ariaLabel" hidden></slot>
 
       <${this.buttonTag}
-        aria-label="${this.runtimeUtils.getSlotText(this, 'ariaLabel') || 'arrow-up'}"
+        aria-label="${this.runtimeUtils.getSlotText(this, "ariaLabel") || "arrow-up"}"
         rounded
         .disabled="${this.disabled}"
         variant="${this.variant}"
