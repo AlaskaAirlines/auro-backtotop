@@ -14,10 +14,11 @@
     "url": "https://github.com/AlaskaAirlines/auro-backtotop"
   },
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/registered.js",
+  "types": "dist/index.d.ts",
   "license": "Apache-2.0",
   "engines": {
-    "node": "^20.x || ^22.x"
+    "node": ">=20"
   },
   "dependencies": {
     "lit": "^3.3.1"
@@ -42,7 +43,8 @@
     "last 2 Safari major versions"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "keywords": [
     "alaska airlines",
