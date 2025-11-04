@@ -6,12 +6,6 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Backtotop
 
-<auro-icon-9_1_0 customColor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon-9_1_0>
-
-<br /><br /><br />
-
-After icon
-
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
