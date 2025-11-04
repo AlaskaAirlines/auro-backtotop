@@ -68,11 +68,6 @@ export class AuroBackToTop extends LitElement {
     /**
      * @private
      */
-    this.iconOnly = true;
-
-    /**
-     * @private
-     */
     this.lastKnownScrollPosition = 0;
 
     /**
@@ -110,10 +105,6 @@ export class AuroBackToTop extends LitElement {
         type: Boolean,
         reflect: true,
       },
-      iconOnly: {
-        type: Boolean,
-        reflect: true,
-      },
       interactionActive: {
         type: Boolean,
       },
@@ -123,7 +114,6 @@ export class AuroBackToTop extends LitElement {
 
       /**
        * The variant attribute allows for rendering the button using the primary (default) or secondary styles.
-       * @type { 'primary' | 'secondary' | String }
        * @default "primary"
        */
       variant: {
@@ -223,10 +213,8 @@ export class AuroBackToTop extends LitElement {
 
       <${this.buttonTag}
         aria-label="${this.runtimeUtils.getSlotText(this, "ariaLabel") || "arrow-up"}"
-        rounded
         .disabled="${this.disabled}"
         variant="${this.variant}"
-        ?iconOnly=${!this.lastScrollDirectionUp && !this.interactionActive}
         part="button"
         shape="${this.shape}"
         size="${this.size}"

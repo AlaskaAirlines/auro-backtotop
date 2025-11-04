@@ -4,10 +4,10 @@ The auro-backtotop element provides users a way to quickly return to page top.
 
 ### Properties & Attributes
 
-| Properties | Attributes | Type                               | Default   | Description                                                                                            |
-| ---------- | ---------- | ---------------------------------- | --------- | ------------------------------------------------------------------------------------------------------ |
-| disabled   | disabled   | boolean                            |           | Render the trigger inline, will always be visible.                                                     |
-| variant    | variant    | 'primary' \| 'secondary' \| String | "primary" | The variant attribute allows for rendering the button using the primary (default) or secondary styles. |
+| Properties | Attributes | Type    | Default   | Description                                                                                            |
+| ---------- | ---------- | ------- | --------- | ------------------------------------------------------------------------------------------------------ |
+| disabled   | disabled   | boolean |           | Render the trigger inline, will always be visible.                                                     |
+| variant    | variant    | string  | "primary" | The variant attribute allows for rendering the button using the primary (default) or secondary styles. |
 
 ### Methods
 
