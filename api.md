@@ -1,30 +1,36 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
-<!-- The below content is automatically added from ../docs/api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
+<!-- The below content is automatically added from ./../docs/api.md -->
 
 # auro-backtotop
 
 The auro-backtotop element provides users a way to quickly return to page top.
 
-## Properties
+### Properties & Attributes
 
-| Property    | Attribute   | Type      | Default | Description                                      |
-|-------------|-------------|-----------|---------|--------------------------------------------------|
-| [disabled](#disabled)  | `disabled`  | `Boolean` | false   | Render the trigger inline, will always be visible |
-| [secondary](#secondary) | `secondary` | `Boolean` | false   | Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended) |
+| Properties | Attributes | Type    | Default   | Description                                                                                            |
+| ---------- | ---------- | ------- | --------- | ------------------------------------------------------------------------------------------------------ |
+| disabled   | disabled   | boolean |           | Render the trigger inline, will always be visible.                                                     |
+| variant    | variant    | string  | "primary" | The variant attribute allows for rendering the button using the primary (default) or secondary styles. |
 
-## Slots
+### Methods
 
-| Name        | Description                                      |
-|-------------|--------------------------------------------------|
-|             | Default slot for the text of the button.         |
-| [ariaLabel](#ariaLabel) | Use this slot to pass an aria-label to the HTML5 button. |
+| Name     | Parameters                                                          | Return | Description                                       |
+| -------- | ------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of element that you want to register to. |        | This will register this element with the browser. |
 
-## CSS Shadow Parts
+### Slots
 
-| Part     | Description                 |
-|----------|-----------------------------|
-| [button](#button) | Apply CSS to HTML5 button.  |
-| [icon](#icon)   | Apply CSS to arrow up icon. |
+| Name      | Description                                              |
+| --------- | -------------------------------------------------------- |
+| (default) | Default slot for the text of the button.                 |
+| ariaLabel | Use this slot to pass an aria-label to the HTML5 button. |
+
+### CSS Shadow Parts
+
+| Name   | Description                 |
+| ------ | --------------------------- |
+| button | Apply CSS to HTML5 button.  |
+| icon   | Apply CSS to arrow up icon. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples
@@ -32,15 +38,16 @@ The auro-backtotop element provides users a way to quickly return to page top.
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-backtotop>Back to top</auro-backtotop>
   <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basicButtonOnly.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basicButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basicButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basicButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
-    rounded>
+    shape="pill"
+    size="lg">
     Back to top
     <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
@@ -48,8 +55,8 @@ The auro-backtotop element provides users a way to quickly return to page top.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-backtotop>Back to top</auro-backtotop>
@@ -64,12 +71,13 @@ The auro-backtotop element provides users a way to quickly return to page top.
 This example demonstrates auro-backtotop in its disabled state.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/disabledButtonOnly.html) -->
-  <!-- The below content is automatically added from ../apiExamples/disabledButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/disabledButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
     disabled
-    rounded>
+    shape="pill"
+    size="lg">
     Back to top
     <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
@@ -77,8 +85,8 @@ This example demonstrates auro-backtotop in its disabled state.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/disabled.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/disabled.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabled.html -->
 
 ```html
 <auro-backtotop disabled>Back to top</auro-backtotop>
@@ -86,17 +94,17 @@ This example demonstrates auro-backtotop in its disabled state.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### secondary
+#### variant
 
-The `secondary` attribute will make the Back to Top button use the `secondary` style.
+The `variant` attribute allows for rendering the button using the `primary` (default) or `secondary` styles.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/secondaryButtonOnly.html) -->
-  <!-- The below content is automatically added from ../apiExamples/secondaryButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/secondaryButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/secondaryButtonOnly.html -->
   <auro-button
-    aria-label="arrow-up"
-    secondary
-    rounded>
+    variant="secondary"
+    shape="pill"
+    size="lg">
     Back to top
     <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
@@ -104,11 +112,11 @@ The `secondary` attribute will make the Back to Top button use the `secondary` s
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/secondary.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/secondary.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/secondary.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/secondary.html -->
 
 ```html
-<auro-backtotop secondary>Back to top</auro-backtotop>
+<auro-backtotop variant="secondary">Back to top</auro-backtotop>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -120,11 +128,12 @@ The `secondary` attribute will make the Back to Top button use the `secondary` s
 The default slot defines the content of the button.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basicButtonOnly.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basicButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basicButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basicButtonOnly.html -->
   <auro-button
     aria-label="arrow-up"
-    rounded>
+    shape="pill"
+    size="lg">
     Back to top
     <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
@@ -132,8 +141,8 @@ The default slot defines the content of the button.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-backtotop>Back to top</auro-backtotop>
@@ -146,11 +155,12 @@ The default slot defines the content of the button.
 The `ariaLabel` slot allows you to pass an aria-label to the HTML5 button. The default value is `"arrow-up"`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ariaLabelButtonOnly.html) -->
-  <!-- The below content is automatically added from ../apiExamples/ariaLabelButtonOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/ariaLabelButtonOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/ariaLabelButtonOnly.html -->
   <auro-button
     aria-label="Custom aria-label goes here!"
-    rounded>
+    shape="pill"
+    size="lg">
     Back to top
     <auro-icon customcolor category="interface" name="arrow-up" slot="icon" part="icon"></auro-icon>
   </auro-button>
@@ -158,12 +168,11 @@ The `ariaLabel` slot allows you to pass an aria-label to the HTML5 button. The d
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ariaLabel.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/ariaLabel.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/ariaLabel.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/ariaLabel.html -->
 
 ```html
 <auro-backtotop>
-  <span slot="ariaLabel">Custom aria-label goes here!</span>
   Back to top
 </auro-backtotop>
 ```
@@ -172,8 +181,8 @@ The `ariaLabel` slot allows you to pass an aria-label to the HTML5 button. The d
 
 ## Page Content For Demo
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/pageContent.html) -->
-<!-- The below content is automatically added from ../apiExamples/pageContent.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pageContent.html) -->
+<!-- The below content is automatically added from ./../apiExamples/pageContent.html -->
 <p>
   This component requires page content that is taller than the window. Below is `lorem ipsum` content to force a large document. A `back to top` button will appear when you begin to scroll down the page.
 </p>
