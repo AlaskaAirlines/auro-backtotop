@@ -1,4 +1,4 @@
-import { AuroBackToTop } from "../src/auro-backtotop";
+import { AuroBackToTop } from "../src/index";
 
 AuroBackToTop.register();
-AuroBackToTop.register('custom-backtotop');
+AuroBackToTop.register("custom-backtotop");

@@ -1,5 +1,4 @@
-
-import { AuroBackToTop } from '../../src/auro-backtotop.js';
+import { AuroBackToTop } from "../../src/auro-backtotop.js";
 
 /**
  * The auro-backtotop element provides users a way to quickly return to page top.

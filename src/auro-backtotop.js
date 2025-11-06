@@ -1,29 +1,21 @@
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
-/* eslint-disable lit/binding-positions, lit/no-invalid-html */
-
+import { AuroButton } from "@aurodesignsystem/auro-button/class";
+import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // ---------------------------------------------------------------------
 import { LitElement } from "lit";
-import { html } from 'lit/static-html.js';
-import styleCss from "./style-css.js";
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
-import iconVersion from './iconVersion.js';
-
-import { AuroButton } from '@aurodesignsystem/auro-button/src/auro-button.js';
-import buttonVersion from './buttonVersion.js';
+import { html } from "lit/static-html.js";
+import buttonVersion from "./buttonVersion";
+import iconVersion from "./iconVersion";
+import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-backtotop element provides users a way to quickly return to page top.
  *
- * @attr {Boolean} disabled - Render the trigger inline, will always be visible
- * @attr {Boolean} secondary - Adjust how far the user scrolls before the fixed button appears, expressed in CSS measurement units (`vh` recommended)
  * @slot - Default slot for the text of the button.
  * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -31,61 +23,47 @@ import buttonVersion from './buttonVersion.js';
  */
 export class AuroBackToTop extends LitElement {
 
-  static get properties() {
-    return {
-      disabled: {
-        type: Boolean,
-        reflect: true
-      },
-      hidden: {
-        type: Boolean,
-        reflect: true
-      },
-      iconOnly: {
-        type: Boolean,
-        reflect: true
-      },
-      interactionActive: {
-        type: Boolean
-      },
-      lastScrollDirectionUp: {
-        type: Boolean
-      },
-      secondary: {
-        type: Boolean,
-        reflect: true
-      }
-    };
+    constructor() {
+    super();
+
+    this.initializeProperties();
   }
 
-  constructor() {
-    super();
+  initializeProperties() {
 
     const versioning = new AuroDependencyVersioning();
 
-    /**
-     * @private
-     */
-    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
-
-    /**
-     * @private
-     */
-    this.buttonTag = versioning.generateTag('auro-button', buttonVersion, AuroButton);
-
-
     this.disabled = false;
-    this.secondary = false;
+    this.variant = "primary";
+
+    /**
+     * @private
+     */
+    this.iconTag = versioning.generateTag("auro-icon", iconVersion, AuroIcon);
+
+    /**
+     * @private
+     */
+    this.buttonTag = versioning.generateTag(
+      "auro-backtotop-button",
+      buttonVersion,
+      AuroButton,
+    );
+
+    /**
+     * @private
+     */
+    this.shape = "circle";
+
+    /**
+     * @private
+     */
+    this.size = "lg";
 
     /**
      * @private
      */
     this.hidden = true;
-
-    /**
-     * @private
-     */
-    this.iconOnly = true;
 
     /**
      * @private
@@ -112,6 +90,39 @@ export class AuroBackToTop extends LitElement {
      */
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
+
+  static get properties() {
+    return {
+
+      /**
+       * Render the trigger inline, will always be visible.
+       */
+      disabled: {
+        type: Boolean,
+        reflect: true,
+      },
+      hidden: {
+        type: Boolean,
+        reflect: true,
+      },
+      interactionActive: {
+        type: Boolean,
+      },
+      lastScrollDirectionUp: {
+        type: Boolean,
+      },
+
+      /**
+       * The variant attribute allows for rendering the button using the primary (default) or secondary styles.
+       * @default "primary"
+       */
+      variant: {
+        type: String,
+        reflect: true,
+      },
+    };
+  }
+
 
   static get styles() {
     return [styleCss];
@@ -146,9 +157,11 @@ export class AuroBackToTop extends LitElement {
     this.interactionActive = false;
   }
 
+  
+
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-backtotop');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-backtotop");
 
     // hide/show the button and it's text based on scroll position
     document.addEventListener("scroll", () => {
@@ -168,24 +181,26 @@ export class AuroBackToTop extends LitElement {
     });
 
     // hide/show the button text based on mouse and keyboard interaction
-    this.addEventListener('mouseover', () => {
+    this.addEventListener("mouseover", () => {
+      this.shape = "pill";
       this.interactionActive = true;
     });
 
-    this.addEventListener('mouseout', () => {
+    this.addEventListener("mouseout", () => {
+      this.shape = "circle";
       this.interactionActive = false;
     });
 
     // The focusin and focusout events are to simulate toggling text for keyboard users
-    this.addEventListener('focusin', () => {
+    this.addEventListener("focusin", () => {
       this.interactionActive = true;
     });
 
-    this.addEventListener('focusout', () => {
+    this.addEventListener("focusout", () => {
       this.interactionActive = false;
     });
 
-    this.addEventListener('touchend', () => {
+    this.addEventListener("touchend", () => {
       this.onTriggerClick();
     });
   }
@@ -197,16 +212,18 @@ export class AuroBackToTop extends LitElement {
       <slot name="ariaLabel" hidden></slot>
 
       <${this.buttonTag}
-        aria-label="${this.runtimeUtils.getSlotText(this, 'ariaLabel') || 'arrow-up'}"
-        rounded
+        aria-label="${this.runtimeUtils.getSlotText(this, "ariaLabel") || "arrow-up"}"
         .disabled="${this.disabled}"
-        .secondary="${this.secondary}"
-        ?iconOnly=${!this.lastScrollDirectionUp && !this.interactionActive}
+        variant="${this.variant}"
         part="button"
+        shape="${this.shape}"
+        size="${this.size}"
         @click=${this.onTriggerClick}
         tabindex="-1">
-        <slot></slot>
-        <${this.iconTag} customColor category="interface" name="arrow-up" slot="icon" part="icon"></${this.iconTag}>
+        <span class="text" part="text">
+          <slot></slot>
+        </span>
+        <${this.iconTag} customColor category="interface" name="arrow-up" part="icon"></${this.iconTag}>
       </${this.buttonTag}>
     `;
   }

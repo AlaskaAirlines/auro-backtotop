@@ -1,0 +1,23 @@
+// Copyright (c) 2025 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// Support for fallback values
+
+/* stylelint-disable max-nesting-depth, selector-max-combinators, selector-max-compound-selectors */
+
+@use './../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables.scss' as vac;
+
+:host {
+  position: fixed;
+  right: var(--ds-size-300, vac.$ds-size-300);
+  bottom: var(--ds-size-300, vac.$ds-size-300);
+
+  [auro-button] {
+    &:not(:hover) {
+      .text {
+        display: none;
+        overflow: hidden;
+      }
+    }
+  }
+}
