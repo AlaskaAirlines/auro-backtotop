@@ -1,16 +1,16 @@
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## API Examples
-
-### Basic
+## Basic
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basicButtonOnly.html) -->
+  
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic_button-only.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -19,14 +19,14 @@
 
 </auro-accordion>
 
-### Attribute Examples
+## Property & Attribute Examples
 
-#### disabled
+### Disabled
 
 This example demonstrates auro-backtotop in its disabled state.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledButtonOnly.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled_button-only.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -37,58 +37,37 @@ This example demonstrates auro-backtotop in its disabled state.
 
 </auro-accordion>
 
-#### variant
+### Variant
 
 The `variant` attribute allows for rendering the button using the `primary` (default) or `secondary` styles.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/secondaryButtonOnly.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant_button-only.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/secondary.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-### Slot Examples
+## Slot Examples
 
-#### default
-
-The default slot defines the content of the button.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basicButtonOnly.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
-#### ariaLabel
+### Aria Label
 
 The `ariaLabel` slot allows you to pass an aria-label to the HTML5 button. The default value is `"arrow-up"`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/ariaLabelButtonOnly.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-label_button-only.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/ariaLabel.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/aria-label.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
-
-## Page Content For Demo
-
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pageContent.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->

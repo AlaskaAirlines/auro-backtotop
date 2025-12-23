@@ -14,7 +14,8 @@ import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-backtotop element provides users a way to quickly return to page top.
+ * The `auro-backtotop` element provides users a way to quickly return to page top.
+ * @customElement auro-backtotop
  *
  * @slot - Default slot for the text of the button.
  * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
@@ -26,11 +27,10 @@ export class AuroBackToTop extends LitElement {
     constructor() {
     super();
 
-    this.initializeProperties();
+    this._initializeDefaults();
   }
 
-  initializeProperties() {
-
+  _initializeDefaults() {
     const versioning = new AuroDependencyVersioning();
 
     this.disabled = false;
@@ -96,30 +96,31 @@ export class AuroBackToTop extends LitElement {
 
       /**
        * Render the trigger inline, will always be visible.
+       * @default false
        */
       disabled: {
         type: Boolean,
         reflect: true,
       },
       hidden: {
-        type: Boolean,
-        reflect: true,
+        type: Boolean
       },
       interactionActive: {
-        type: Boolean,
+        type: Boolean
       },
       lastScrollDirectionUp: {
-        type: Boolean,
+        type: Boolean
       },
 
       /**
        * The variant attribute allows for rendering the button using the primary (default) or secondary styles.
-       * @default "primary"
+       * @type {'primary' | 'secondary'}
+       * @default 'primary'
        */
       variant: {
         type: String,
-        reflect: true,
-      },
+        reflect: true
+      }
     };
   }
 
@@ -130,7 +131,7 @@ export class AuroBackToTop extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-backtotop"] - The name of element that you want to register to.
+   * @param {string} [name="auro-backtotop"] - The name of the element that you want to register.
    *
    * @example
    * AuroBackToTop.register("custom-backtotop") // this will register this element to <custom-backtotop/>
