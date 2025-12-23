@@ -1,19 +1,19 @@
 # auro-backtotop
 
-The auro-backtotop element provides users a way to quickly return to page top.
+The `auro-backtotop` element provides users a way to quickly return to page top.
 
 ### Properties & Attributes
 
-| Properties | Attributes | Type    | Default   | Description                                                                                            |
-| ---------- | ---------- | ------- | --------- | ------------------------------------------------------------------------------------------------------ |
-| disabled   | disabled   | boolean |           | Render the trigger inline, will always be visible.                                                     |
-| variant    | variant    | string  | "primary" | The variant attribute allows for rendering the button using the primary (default) or secondary styles. |
+| Properties | Attributes | Modifiers | Type                     | Default   | Description                                                                                            |
+| ---------- | ---------- | --------- | ------------------------ | --------- | ------------------------------------------------------------------------------------------------------ |
+| disabled   | disabled   |           | boolean                  | `false`   | Render the trigger inline, will always be visible.                                                     |
+| variant    | variant    |           | `primary` \| `secondary` | `primary` | The variant attribute allows for rendering the button using the primary (default) or secondary styles. |
 
 ### Methods
 
-| Name     | Parameters                                                          | Return | Description                                       |
-| -------- | ------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of element that you want to register to. |        | This will register this element with the browser. |
+| Name     | Parameters                                                           | Return | Description                                       |
+| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
 
 ### Slots
 

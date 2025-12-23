@@ -23,24 +23,26 @@ The following sections are editable by making changes to the following files:
 <!-- The below content is automatically added from ./docs/partials/description.md -->
 `<auro-backtotop>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing a quick and accessible means to jump back to the top of a long content page.
 
-The component will be hidden while the page Y scroll position is at the top. When scroll down begins the button will display in the bottom right corner of the page. While scrolling down the button will display only an arrow up icon. When scroll up occurs, the button will additionally display any slotted text content.
+The component will be hidden while the page Y scroll position is at the top. When scroll down begins the button will display in the bottom right corner of the page. While scrolling down the button will display only an arrow up icon.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
 <!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## UI development browser support
+## Use Cases
 
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/browserSupport.md) -->
-For the most up to date information on [UI development browser support](https://auro.alaskaair.com/support/browsersSupport)
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ./docs/partials/useCases.md -->
+The `<auro-backtotop>` element should be used in situations where users may:
 
+* Pages with large amounts of content where a shortcut to jump to the top of the page is appropriate.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentInstall.md) -->
-[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-backtotop/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-backtotop/actions/workflows/testPublish.yml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-backtotop/release.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-backtotop/actions/workflows/release.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-backtotop?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-backtotop)
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-backtotop?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 ![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
@@ -51,17 +53,10 @@ $ npm i @aurodesignsystem/auro-backtotop
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-### Design Token CSS Custom Property dependency
-
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/development/designTokens.md) -->
-The use of any Auro custom element has a dependency on the [Auro Design Tokens](https://auro.alaskaair.com/getting-started/developers/design-tokens).
-
-<!-- AURO-GENERATED-CONTENT:END -->
-
-### Define dependency in project component
+### Define Dependency in Project
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImportDescription.md) -->
-Defining the component dependency within each component that is using the `<auro-backtotop>` component.
+Defining the dependency within each project that is using the `<auro-backtotop>` component.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImport.md) -->
@@ -71,16 +66,8 @@ import "@aurodesignsystem/auro-backtotop";
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
-**Reference component in HTML**
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
 
-```html
-<auro-backtotop>Back to top</auro-backtotop>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-
-## Use CDN
+### Use CDN
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/bundleInstallDescription.md) -->
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Legacy browsers such as IE11 are no longer supported.
@@ -91,18 +78,7 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## auro-backtotop use cases
-
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
-<!-- The below content is automatically added from ./docs/partials/useCases.md -->
-The `<auro-backtotop>` element should be used in situations where users may:
-
-* Pages with large amounts of content where a shortcut to jump to the top of the page is appropriate.
-<!-- AURO-GENERATED-CONTENT:END -->
-
-## API Code Examples
-
-### Default auro-backtotop
+## Basic Example
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
@@ -112,31 +88,43 @@ The `<auro-backtotop>` element should be used in situations where users may:
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Development
+## Custom Component Registration for Version Management
 
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/development/developmentDescription.md) -->
-In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
+There are two key parts to every Auro component: the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element definition.
+The class defines the component’s behavior, while the custom element registers it under a specific name so it can be used in HTML.
 
-Please be sure to review the [contribution guidelines](https://auro.alaskaair.com/contributing) for this project. Please make sure to **pay special attention** to the **conventional commits** section of the document.
+When you install the component as described on the `Install` page, the class is imported automatically, and the component is registered globally for you.
 
-<!-- AURO-GENERATED-CONTENT:END -->
+However, if you need to load multiple versions of the same component on a single page (for example, when two projects depend on different versions), you can manually register the class under a custom element name to avoid conflicts.
 
-### Start development environment
+You can do this by importing only the component class and using the `register(name)` method with a unique name:
 
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/development/localhost.md) -->
-Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open a shell session to run the **dev server**.
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
+<!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
 
-```shell
-$ npm run dev
+```js
+// Import the class only
+import { AuroBackToTop } from '@aurodesignsystem/auro-backtotop/class';
+
+// Register with a custom name if desired
+AuroBackToTop.register('custom-backtotop');
 ```
 
-Open [localhost:8000](http://localhost:8000/)
-
+This will create a new custom element `<custom-backtotop>` that behaves exactly like `<auro-backtotop>`, allowing both to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
+<div class="exampleWrapper exampleWrapper--flex">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./apiExamples/custom.html -->
+  <custom-backtotop>Custom back to top</custom-backtotop>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
 
-### Testing
-
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/development/testing.md) -->
-Automated tests are required for every Auro component. See `.\test\auro-backtotop.test.js` for the tests for this component. Run `npm run test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
-
+```html
+<custom-backtotop>Custom back to top</custom-backtotop>
+```
 <!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
