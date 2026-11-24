@@ -23,7 +23,7 @@ The following sections are editable by making changes to the following files:
 <!-- The below content is automatically added from ./docs/partials/description.md -->
 `<auro-backtotop>` is an [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that takes people back to the top of a long page.
 
-The button stays in the bottom-right corner of the page. It shows only an arrow-up icon until a pointer moves over it, then widens to show its text. It doesn't currently hide while the page is scrolled to the top.
+The button stays hidden near the top of the page and appears in the bottom-right corner once the page is scrolled 400 pixels or more. It shows only an arrow-up icon until a pointer moves over it, then widens to show its text.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->

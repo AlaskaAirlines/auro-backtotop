@@ -3,7 +3,7 @@
 A button that takes people back to the top of a long page.
 
 Key capabilities:
-- **Stays in view**: The button always sits in the bottom-right corner of the page.
+- **Appears after scrolling**: The button always stays hidden near the top of the page and appears in the bottom-right corner once the page is scrolled 400 pixels or more.
 - **Expands on hover**: The button always shows only an arrow-up icon until a pointer moves over it, then shows its text.
 - **Quieter style**: Set `variant="secondary"` for a less prominent button.
 

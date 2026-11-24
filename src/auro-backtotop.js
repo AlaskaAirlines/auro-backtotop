@@ -17,7 +17,7 @@ import styleCss from "./styles/style.scss";
  * A button that takes people back to the top of a long page.
  *
  * Key capabilities:
- * - **Stays in view**: The button always sits in the bottom-right corner of the page.
+ * - **Appears after scrolling**: The button always stays hidden near the top of the page and appears in the bottom-right corner once the page is scrolled 400 pixels or more.
  * - **Expands on hover**: The button always shows only an arrow-up icon until a pointer moves over it, then shows its text.
  * - **Quieter style**: Set `variant="secondary"` for a less prominent button.
  *
@@ -116,7 +116,8 @@ export class AuroBackToTop extends LitElement {
         reflect: true,
       },
       hidden: {
-        type: Boolean
+        type: Boolean,
+        reflect: true
       },
       interactionActive: {
         type: Boolean
@@ -171,7 +172,14 @@ export class AuroBackToTop extends LitElement {
     this.interactionActive = false;
   }
 
-  
+  /**
+   * Hides the button while the page is scrolled less than `yPosShowButton` from the top.
+   * @private
+   * @returns {void}
+   */
+  updateVisibility() {
+    this.hidden = this.lastKnownScrollPosition < this.yPosShowButton;
+  }
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
@@ -186,13 +194,13 @@ export class AuroBackToTop extends LitElement {
       }
 
       this.lastKnownScrollPosition = window.scrollY;
-
-      if (this.lastKnownScrollPosition < this.yPosShowButton) {
-        this.hidden = true;
-      } else {
-        this.hidden = false;
-      }
+      this.updateVisibility();
     });
+
+    // Set the starting state too, so a page that loads already scrolled
+    // (a reload or an anchor link) shows the button without waiting for a scroll.
+    this.lastKnownScrollPosition = window.scrollY;
+    this.updateVisibility();
 
     // hide/show the button text based on mouse and keyboard interaction
     this.addEventListener("mouseover", () => {
