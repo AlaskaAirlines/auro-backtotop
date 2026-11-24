@@ -21,3 +21,8 @@
     }
   }
 }
+
+// Hide the button while the page is near the top (set by the scroll handler).
+:host([hidden]) {
+  display: none;
+}

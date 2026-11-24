@@ -14,13 +14,27 @@ import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The `auro-backtotop` element provides users a way to quickly return to page top.
+ * A button that takes people back to the top of a long page.
+ *
+ * Key capabilities:
+ * - **Appears after scrolling**: The button always stays hidden near the top of the page and appears in the bottom-right corner once the page is scrolled 400 pixels or more.
+ * - **Expands on hover**: The button always shows only an arrow-up icon until a pointer moves over it, then shows its text.
+ * - **Quieter style**: Set `variant="secondary"` for a less prominent button.
+ *
+ * @example
+ * <auro-backtotop>
+ *   <span slot="ariaLabel">Back to top</span>
+ *   Back to top
+ * </auro-backtotop>
+ *
+ * @summary A fixed button that returns people to the top of a long page.
  * @customElement auro-backtotop
  *
- * @slot - Default slot for the text of the button.
- * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
- * @csspart button - Apply CSS to HTML5 button.
- * @csspart icon - Apply CSS to arrow up icon.
+ * @slot - Text shown beside the icon while a pointer is over the button, such as "Back to top". Screen readers read the `ariaLabel` slot instead.
+ * @slot ariaLabel - Text read by screen readers in place of the visible label, such as "Back to top". Set it on every back-to-top button, because the fallback, "arrow-up", names the icon instead of the action.
+ * @csspart button - The `auro-button` element that holds the arrow-up icon and text.
+ * @csspart icon - The `auro-icon` element that shows the arrow-up icon.
+ * @csspart text - The `<span>` that holds the text shown beside the icon while a pointer is over the button.
  */
 export class AuroBackToTop extends LitElement {
 
@@ -95,15 +109,15 @@ export class AuroBackToTop extends LitElement {
     return {
 
       /**
-       * Render the trigger inline, will always be visible.
-       * @default false
+       * Turns the button off, so it's shown in a muted style and can't be clicked. Doesn't currently stop a tap on a touch screen from scrolling to the top of the page.
        */
       disabled: {
         type: Boolean,
         reflect: true,
       },
       hidden: {
-        type: Boolean
+        type: Boolean,
+        reflect: true
       },
       interactionActive: {
         type: Boolean
@@ -113,7 +127,7 @@ export class AuroBackToTop extends LitElement {
       },
 
       /**
-       * The variant attribute allows for rendering the button using the primary (default) or secondary styles.
+       * Sets the button's visual emphasis. `primary` uses auro-button's strongest style, and `secondary` a quieter one.
        * @type {'primary' | 'secondary'}
        * @default 'primary'
        */
@@ -130,11 +144,11 @@ export class AuroBackToTop extends LitElement {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-backtotop"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name.
+   * @param {string} [name="auro-backtotop"] - The tag name to register the element under.
    *
    * @example
-   * AuroBackToTop.register("custom-backtotop") // this will register this element to <custom-backtotop/>
+   * AuroBackToTop.register("custom-backtotop") // Registers the element as <custom-backtotop>
    *
    */
   static register(name = "auro-backtotop") {
@@ -158,7 +172,14 @@ export class AuroBackToTop extends LitElement {
     this.interactionActive = false;
   }
 
-  
+  /**
+   * Hides the button while the page is scrolled less than `yPosShowButton` from the top.
+   * @private
+   * @returns {void}
+   */
+  updateVisibility() {
+    this.hidden = this.lastKnownScrollPosition < this.yPosShowButton;
+  }
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
@@ -173,13 +194,13 @@ export class AuroBackToTop extends LitElement {
       }
 
       this.lastKnownScrollPosition = window.scrollY;
-
-      if (this.lastKnownScrollPosition < this.yPosShowButton) {
-        this.hidden = true;
-      } else {
-        this.hidden = false;
-      }
+      this.updateVisibility();
     });
+
+    // Set the starting state too, so a page that loads already scrolled
+    // (a reload or an anchor link) shows the button without waiting for a scroll.
+    this.lastKnownScrollPosition = window.scrollY;
+    this.updateVisibility();
 
     // hide/show the button text based on mouse and keyboard interaction
     this.addEventListener("mouseover", () => {

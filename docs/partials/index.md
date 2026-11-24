@@ -9,12 +9,12 @@
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
  
-## Use Cases
+## Use cases
  
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
  
-## Example(s)
+## Examples
 
 ### Basic
  
@@ -34,7 +34,7 @@
  
 </auro-accordion>
 
-### Page Content For Demo
+### Page content for demo
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/page-content.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
