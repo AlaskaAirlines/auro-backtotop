@@ -19,11 +19,11 @@
 
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Disabled
 
-This example demonstrates auro-backtotop in its disabled state.
+Set `disabled` to turn the button off.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled_button-only.html) -->
@@ -39,7 +39,7 @@ This example demonstrates auro-backtotop in its disabled state.
 
 ### Variant
 
-The `variant` attribute allows for rendering the button using the `primary` (default) or `secondary` styles.
+Set `variant="secondary"` for a quieter button. The default is `primary`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant_button-only.html) -->
@@ -54,11 +54,11 @@ The `variant` attribute allows for rendering the button using the `primary` (def
 
 </auro-accordion>
 
-## Slot Examples
+## Slot examples
 
-### Aria Label
+### ARIA label
 
-The `ariaLabel` slot allows you to pass an aria-label to the HTML5 button. The default value is `"arrow-up"`.
+Use the `ariaLabel` slot to set the text screen readers read for the button, such as "Back to top". Without it, screen readers read "arrow-up", which names the icon instead of the action.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-label_button-only.html) -->

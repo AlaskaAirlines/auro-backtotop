@@ -1,3 +1,3 @@
-The `<auro-backtotop>` element should be used in situations where users may:
+Use `<auro-backtotop>` on:
 
-* Pages with large amounts of content where a shortcut to jump to the top of the page is appropriate.
+* Long pages, where a shortcut back to the top saves people from scrolling.

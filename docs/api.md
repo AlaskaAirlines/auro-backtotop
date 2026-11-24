@@ -1,30 +1,36 @@
 # auro-backtotop
 
-The `auro-backtotop` element provides users a way to quickly return to page top.
+A button that takes people back to the top of a long page.
 
-### Properties & Attributes
+Key capabilities:
+- **Appears after scrolling**: The button always stays hidden near the top of the page and appears in the bottom-right corner once the page is scrolled 400 pixels or more.
+- **Expands on hover**: The button always shows only an arrow-up icon until a pointer moves over it, then shows its text.
+- **Quieter style**: Set `variant="secondary"` for a less prominent button.
 
-| Properties | Attributes | Modifiers | Type                     | Default   | Description                                                                                            |
-| ---------- | ---------- | --------- | ------------------------ | --------- | ------------------------------------------------------------------------------------------------------ |
-| disabled   | disabled   |           | boolean                  | `false`   | Render the trigger inline, will always be visible.                                                     |
-| variant    | variant    |           | `primary` \| `secondary` | `primary` | The variant attribute allows for rendering the button using the primary (default) or secondary styles. |
+### Properties and attributes
+
+| Properties | Attributes | Modifiers | Type                     | Default   | Description                                                                                                                                                      |
+| ---------- | ---------- | --------- | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| disabled   | disabled   |           | boolean                  |           | Turns the button off, so it's shown in a muted style and can't be clicked. Doesn't currently stop a tap on a touch screen from scrolling to the top of the page. |
+| variant    | variant    |           | `primary` \| `secondary` | `primary` | Sets the button's visual emphasis. `primary` uses auro-button's strongest style, and `secondary` a quieter one.                                                  |
 
 ### Methods
 
-| Name     | Parameters                                                           | Return | Description                                       |
-| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
+| Name     | Parameters                                                    | Return | Description                                              |
+| -------- | ------------------------------------------------------------- | ------ | -------------------------------------------------------- |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. |
 
 ### Slots
 
-| Name      | Description                                              |
-| --------- | -------------------------------------------------------- |
-| (default) | Default slot for the text of the button.                 |
-| ariaLabel | Use this slot to pass an aria-label to the HTML5 button. |
+| Name      | Description                                                                                                                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) | Text shown beside the icon while a pointer is over the button, such as "Back to top". Screen readers read the `ariaLabel` slot instead.                                                       |
+| ariaLabel | Text read by screen readers in place of the visible label, such as "Back to top". Set it on every back-to-top button, because the fallback, "arrow-up", names the icon instead of the action. |
 
-### CSS Shadow Parts
+### CSS shadow parts
 
-| Name   | Description                 |
-| ------ | --------------------------- |
-| button | Apply CSS to HTML5 button.  |
-| icon   | Apply CSS to arrow up icon. |
+| Name   | Description                                                                                |
+| ------ | ------------------------------------------------------------------------------------------ |
+| button | The `auro-button` element that holds the arrow-up icon and text.                           |
+| icon   | The `auro-icon` element that shows the arrow-up icon.                                      |
+| text   | The `<span>` that holds the text shown beside the icon while a pointer is over the button. |

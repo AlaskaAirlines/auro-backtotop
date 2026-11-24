@@ -1,3 +1,3 @@
-`<auro-backtotop>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing a quick and accessible means to jump back to the top of a long content page.
+`<auro-backtotop>` is an [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that takes people back to the top of a long page.
 
-The component will be hidden while the page Y scroll position is at the top. When scroll down begins the button will display in the bottom right corner of the page. While scrolling down the button will display only an arrow up icon.
+The button stays hidden near the top of the page and appears in the bottom-right corner once the page is scrolled 400 pixels or more. It shows only an arrow-up icon until a pointer moves over it, then widens to show its text.
