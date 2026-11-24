@@ -6,4 +6,4 @@ import { AuroBackToTop } from '@aurodesignsystem/auro-backtotop/class';
 AuroBackToTop.register('custom-backtotop');
 ```
 
-This will create a new custom element `<custom-backtotop>` that behaves exactly like `<auro-backtotop>`, allowing both to coexist on the same page without interfering with each other.
+This creates a custom element, `<custom-backtotop>`, that works like `<auro-backtotop>`, so both can run on the same page without interfering with each other.
